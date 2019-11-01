@@ -1,0 +1,326 @@
+        {
+            "indexData": [
+                {
+                    "moduleName": "banner",
+                    "data": [
+                        {
+                            "link_url": "https://m.tourscool.com/act/new_year_1028.html",
+                            "image_url": "https://assets.tourscool.com/uploads/inn/2019/10/31/952/LfhcC7Y3hMSXPLLClCdJ-e8M2Q8.jpg",
+                            "title": "新年倒数"
+                        },
+                        {
+                            "link_url": "https://m.tourscool.com/act/thanksgiving_1021.html",
+                            "image_url": "https://assets.tourscool.com/uploads/inn/2019/10/23/952/OhbJ6K2fifm2qkp1dH5IjYoSPfA.jpg",
+                            "title": "感恩节"
+                        },
+                        {
+                            "link_url": "https://m.tourscool.com/90/ya",
+                            "image_url": "http://assets.tourscool.com/uploads/inn/2019/10/23/952/ggoPDFxBYN0ac_fcyybQGlyCEzU.jpg",
+                            "title": "美东"
+                        },
+                        {
+                            "link_url": "https://m.tourscool.com/act/an_1010.html",
+                            "image_url": "http://assets.tourscool.com/uploads/inn/2019/10/15/952/0WrYwP2OyFGSOsGPBTzzbtsBUuo.jpg",
+                            "title": "澳新"
+                        },
+                        {
+                            "link_url": "https://m.tourscool.com/act/polar_light_0809.html",
+                            "image_url": "http://assets.tourscool.com/uploads/inn/2019/10/15/952/9pCLhgGLb4tY5kOgvSfGfh-SN3w.jpg",
+                            "title": "极光早鸟"
+                        },
+                        {
+                            "link_url": "https://m.tourscool.com/act/japan_0822.html",
+                            "image_url": "http://assets.tourscool.com/uploads/inn/2019/08/27/952/8248kb4LBUpYwG0g-m9g6Jn12DA.jpg",
+                            "title": "日本专题"
+                        },
+                        {
+                            "link_url": "https://m.tourscool.com/act/ship0907.html",
+                            "image_url": "http://assets.tourscool.com/uploads/inn/2019/07/17/952/_lL5uBjpK8N7ZBbH_tDUvuW2DCs.jpg",
+                            "title": "邮轮"
+                        }
+                    ]
+                },
+                {
+                    "moduleName": "HotDestination",
+                    "data": [
+                        {
+                            "title": "美国西部",
+                            "image_url": "https://assets.tourscool.com/uploads/inn/2019/02/19/952/_KMHLpS45kgRFhmMU1rXPgvcfE4.jpg",
+                            "category": "89",
+                            "start_city": "",
+                            "span_city": "",
+                            "product_type": "",
+                            "dest_home": 0
+                        },
+                        {
+                            "title": "美国东部",
+                            "image_url": "https://assets.tourscool.com/uploads/inn/2019/02/19/952/no4AHPnG1fzDnbgZomxg2ysobVM.jpg",
+                            "category": "90",
+                            "start_city": "",
+                            "span_city": "",
+                            "product_type": "",
+                            "dest_home": 0
+                        },
+                        {
+                            "title": "加拿大",
+                            "image_url": "https://assets.tourscool.com/uploads/inn/2019/02/19/952/DxI9s0Q5_0r_BYNrdbk6Zf-OvuI.jpg",
+                            "category": "94",
+                            "start_city": "",
+                            "span_city": "",
+                            "product_type": "",
+                            "dest_home": 0
+                        },
+                        {
+                            "title": "夏威夷",
+                            "image_url": "https://assets.tourscool.com/uploads/inn/2019/02/19/952/0Vjxz9AvguP1E-z0A6F9SWBjB1Q.jpg",
+                            "category": "232",
+                            "start_city": "",
+                            "span_city": "",
+                            "product_type": "",
+                            "dest_home": 0
+                        },
+                        {
+                            "title": "日本",
+                            "image_url": "https://assets.tourscool.com/uploads/inn/2019/02/19/952/FBbOVlJMwOTv--dojEsDb9mN_gE.jpg",
+                            "category": "103",
+                            "start_city": "",
+                            "span_city": "",
+                            "product_type": "",
+                            "dest_home": 0
+                        },
+                        {
+                            "title": "欧洲",
+                            "image_url": "http://assets.tourscool.com/uploads/inn/2019/08/22/952/9hCjSHS0cmEFm--EonL_NPUGqdQ.jpg",
+                            "category": "108",
+                            "start_city": "",
+                            "span_city": "",
+                            "product_type": "",
+                            "dest_home": 0
+                        },
+                        {
+                            "title": "澳大利亚",
+                            "image_url": "https://assets.tourscool.com/uploads/inn/2019/02/19/952/754h0Rfh3ECsZs16BDrV131OBy4.jpg",
+                            "category": "97",
+                            "start_city": "",
+                            "span_city": "",
+                            "product_type": "",
+                            "dest_home": 0
+                        },
+                        {
+                            "title": "新西兰",
+                            "image_url": "https://assets.tourscool.com/uploads/inn/2019/02/19/952/BgR1vC7Ob9bCz__wCw7OFrCkrpM.jpg",
+                            "category": "98",
+                            "start_city": "",
+                            "span_city": "",
+                            "product_type": "",
+                            "dest_home": 0
+                        }
+                    ]
+                },
+                {
+                    "moduleName": "sale",
+                    "data": [
+                        {
+                            "product_id": 942,
+                            "default_price": "￥227.29",
+                            "product_entity_type": 0,
+                            "provider_id": 111,
+                            "image": "https://img.tourscool.com/images/product/cc870bc5ebfc6b9f9ac9d2b9b6f95d39.jpg/600x338",
+                            "self_support": 0,
+                            "sales": 4,
+                            "comment_score": "0.0",
+                            "name": "（半日）【文化体验】罗托鲁瓦蒂普亚(TE PUIA)毛利文化村门票(地热间歇泉+毛利歌舞+午/晚餐)",
+                            "percent_calculate": 12,
+                            "special_price": "￥200.00",
+                            "special_end_date": 2608970,
+                            "reduced_price": "￥27.29"
+                        },
+                        {
+                            "product_id": 1743,
+                            "default_price": "￥156.55",
+                            "product_entity_type": 0,
+                            "provider_id": 111,
+                            "image": "https://img.tourscool.com/images/product/d8526a0fcd8d4a98a414e680d315b7c4.jpg/600x338",
+                            "self_support": 0,
+                            "sales": 2,
+                            "comment_score": "0.0",
+                            "name": "（1天）【农场体验】新西兰 罗托鲁瓦爱歌顿(Agrodome)农场门票(中文导游/翻译+农场秀+农场观光)",
+                            "percent_calculate": 12,
+                            "special_price": "￥137.80",
+                            "special_end_date": 2608970,
+                            "reduced_price": "￥18.75"
+                        },
+                        {
+                            "product_id": 1795,
+                            "default_price": "￥183.25",
+                            "product_entity_type": 0,
+                            "provider_id": 29,
+                            "image": "https://img.tourscool.com/images/product/5be419b63afef.jpg/600x338",
+                            "self_support": 0,
+                            "sales": 179,
+                            "comment_score": "0.0",
+                            "name": "澳大利亚布里斯班龙柏考拉保护区门票",
+                            "percent_calculate": 30,
+                            "special_price": "￥128.28",
+                            "special_end_date": 2608970,
+                            "reduced_price": "￥54.98"
+                        },
+                        {
+                            "product_id": 1896,
+                            "default_price": "￥765.00",
+                            "product_entity_type": 0,
+                            "provider_id": 22,
+                            "image": "https://img.tourscool.com/images/product/5bfbceaab6068.jpg/600x338",
+                            "self_support": 1,
+                            "sales": 2,
+                            "comment_score": "5.0",
+                            "name": "（1天）日本伏见稻荷大社+岚山+金阁寺+奈良公园+东大寺人气景点一日游",
+                            "percent_calculate": 9,
+                            "special_price": "￥699.00",
+                            "special_end_date": 1312970,
+                            "reduced_price": "￥66.00"
+                        },
+                        {
+                            "product_id": 2139,
+                            "default_price": "￥298.00",
+                            "product_entity_type": 0,
+                            "provider_id": 53,
+                            "image": "https://img.tourscool.com/images/product/5c2c653767dfd.jpg/600x338",
+                            "self_support": 0,
+                            "sales": 5,
+                            "comment_score": "5.0",
+                            "name": "(1日)【天天发团】日本京都+大阪+奈良一日游·深度游览关西精华+清水寺怀古+稻荷大社+奈良喂萌鹿+天天发团",
+                            "percent_calculate": 10,
+                            "special_price": "￥268.00",
+                            "special_end_date": 1312970,
+                            "reduced_price": "￥30.00"
+                        }
+                    ]
+                },
+                {
+                    "moduleName": "homeicon",
+                    "data": [
+                        {
+                            "link_url": "/all/yj",
+                            "image_url": "https://assets.tourscool.com/uploads/inn/2019/07/24/952/V1DIqxhFFcoUSYLjcivub_qwZRo.png",
+                            "title": "精品小团"
+                        },
+                        {
+                            "link_url": "/all/yw",
+                            "image_url": "https://assets.tourscool.com/uploads/inn/2019/07/24/952/mXxtCra5hsG4Buqw6TOyOr6-bNA.png",
+                            "title": "当地玩乐"
+                        },
+                        {
+                            "link_url": "/all/yg",
+                            "image_url": "https://assets.tourscool.com/uploads/inn/2019/07/24/952/MkzS1-dg32N32BqVvlAkgEWDxkE.png",
+                            "title": "当地跟团"
+                        },
+                        {
+                            "link_url": "/custom",
+                            "image_url": "https://assets.tourscool.com/uploads/inn/2019/07/24/952/qHA_VhqUItHNyNWXR-o0Kg-ExGQ.png",
+                            "title": "个性定制"
+                        },
+                        {
+                            "link_url": "/all/yl",
+                            "image_url": "https://assets.tourscool.com/uploads/inn/2019/07/24/952/LRQzPTBTDdKbjkmzqLn42Vycyqk.png",
+                            "title": "邮轮"
+                        }
+                    ]
+                }
+            ],
+            "goods": [
+                {
+                    "product_id": 709,
+                    "default_price": "￥2,493.06",
+                    "image": "https://img.tourscool.com/images/product/5c88bb2068182.jpg/600x338",
+                    "sales": 627,
+                    "comment_score": "4.8",
+                    "special_price": "",
+                    "name": "（7天）【跨国深度游】美国加拿大纽约+华盛顿+多伦多+魁北克+波士顿跟团游·品尝正宗法式大餐+震撼的尼亚加拉瀑布+全程豪华酒店",
+                    "icons_show": [],
+                    "icons_tour": [
+                        {
+                            "title": "买二送一",
+                            "content": "是指三人共同享用一个酒店标准间的价格，不提供加床"
+                        },
+                        {
+                            "title": "买二送二",
+                            "content": "是指四人共同享用一个酒店标准间的价格，不提供加床"
+                        },
+                        {
+                            "title": "畅销行程",
+                            "content": ""
+                        }
+                    ]
+                },
+                {
+                    "product_id": 382,
+                    "default_price": "￥1,582.00",
+                    "image": "https://img.tourscool.com/images/product/5b5edf7e6ad0f.jpg/600x338",
+                    "sales": 250,
+                    "comment_score": "5.0",
+                    "special_price": "",
+                    "name": "(6天) 【近观瀑布荡涤尘嚣】纽约+费城+华盛顿跟团游·免费升级酒店住宿+尼亚加拉大瀑布+昆西市场+美味龙虾餐",
+                    "icons_show": [],
+                    "icons_tour": [
+                        {
+                            "title": "买二送一",
+                            "content": "是指三人共同享用一个酒店标准间的价格，不提供加床"
+                        },
+                        {
+                            "title": "买二送二",
+                            "content": "是指四人共同享用一个酒店标准间的价格，不提供加床"
+                        },
+                        {
+                            "title": "低价保证",
+                            "content": ""
+                        }
+                    ]
+                },
+                {
+                    "product_id": 4472,
+                    "default_price": "￥1,098.17",
+                    "image": "https://img.tourscool.com/images/product/06701c8e3bc43612cbfdec822c43defd.jpg/600x338",
+                    "sales": 221,
+                    "comment_score": "0.0",
+                    "special_price": "",
+                    "name": "(1日)【峡谷风情】米尔福德峡湾大巴+游船一日游 皇后镇往返(含自助午餐+接送+玻璃顶大巴)",
+                    "icons_show": [],
+                    "icons_tour": []
+                },
+                {
+                    "product_id": 3126,
+                    "default_price": "￥607.38",
+                    "image": "https://img.tourscool.com/images/product/5cf4c58693583.jpg/600x338",
+                    "sales": 204,
+                    "comment_score": "4.7",
+                    "special_price": "",
+                    "name": "(3天)【自由畅游】美国洛杉矶+圣地亚哥跟团游•迪士尼主题乐园+好莱坞环球影城+圣地亚哥海洋世界",
+                    "icons_show": [],
+                    "icons_tour": []
+                },
+                {
+                    "product_id": 1420,
+                    "default_price": "￥1,934.02",
+                    "image": "https://img.tourscool.com/images/product/5bcd97d84b793.jpg/600x338",
+                    "sales": 200,
+                    "comment_score": "4.8",
+                    "special_price": "",
+                    "name": "（2天）【北岛萤火虫】新西兰北岛奥克兰+罗托鲁阿跟团游·霍比特人村庄+毛利文化村+萤火虫钟乳石洞（每周二发团）",
+                    "icons_show": [],
+                    "icons_tour": []
+                },
+                {
+                    "product_id": 2081,
+                    "default_price": "￥247.19",
+                    "image": "https://img.tourscool.com/images/product/5c1b3151c5007.jpg/600x338",
+                    "sales": 193,
+                    "comment_score": "0.0",
+                    "special_price": "",
+                    "name": "（半日）【夏威夷小环岛】威基基海滩+钻石山+努阿努帕里大风口跟团游▪游览闻名风景+领略热带风情",
+                    "icons_show": [],
+                    "icons_tour": []
+                }
+            ]
+        }
+

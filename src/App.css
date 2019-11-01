@@ -1,22 +1,24 @@
 .App {
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
+.anticon{
+  display: block;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.ant-tabs-nav{
+  min-width: 375px;
+  background: #fff
 }
-
-.App-link {
-  color: #09d3ac;
+.ant-tabs-nav .ant-tabs-tab{
+  padding: 3px 19.9px;
+  text-align: center;
+}
+.ant-tabs-nav .ant-tabs-tab .anticon{
+  margin: 0;
+  font-size: 20px
+}
+.ant-tabs-nav{
+  padding-top: 5px
+}
+.nav-text{
+  font-size: .833333rem
 }
