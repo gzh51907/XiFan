@@ -8,6 +8,11 @@ class detail extends Component {
     state = {
 
     }
+
+    componentDidMount() {
+        console.log(this.props);
+    }
+
     render() {
         return <div >
             <Layout>
