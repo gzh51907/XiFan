@@ -9,6 +9,7 @@ const { TabPane } = Tabs;
 class List extends React.Component {
     state = {
         current: 'tuijian',
+        list_goods: []
     }
 
     handleClick = e => {
@@ -22,15 +23,19 @@ class List extends React.Component {
     }
 
     async componentDidMount() {
-        let { data } = await axios.post("http://127.0.0.1:8827/mygoods/list", {
+        let { data: { data } } = await axios.post("http://127.0.0.1:8827/mygoods/list", {
             type: "tuijian"
         });
         // return data;
-
         console.log(data);
+        // this.state.list_goods = data;
+        this.setState({
+            list_goods: data,
+        });
     }
 
     render() {
+        let { list_goods } = this.state;
         return (
             <div className="list">
                 <Layout>
@@ -95,184 +100,49 @@ class List extends React.Component {
 
                     </Header>
                     <Content>
-                        <Card style={{ width: '100%', height: 150 }}
-                            bodyStyle={{ padding: 10 }}
-                        >
-                            <Row>
-                                <Col span={8}>
-                                    <img src={require('../../assets/img/1.jpg')} alt="" />
-                                </Col>
-                                <Col span={16} className="goods_content">
-                                    <h3>2020新年悉尼海港跨年烟花船(含晚餐+两场烟花表演)</h3>
-                                    <h5>
-                                        <Tag className="goods_content_tag1">热门推荐</Tag>
-                                        <Tag className="goods_content_tag1">畅销行程</Tag>
-                                        <Tag className="goods_content_tag2">当地特色体验</Tag>
-                                    </h5>
-                                    <h6>
-                                        <span className="sell_price">
-                                            <strong>
-                                                ￥1,814
-                                            </strong>
-                                            /起
-                                        </span>
-                                        <span className="market_price">
-                                            原价：￥1,880
-                                        </span>
-                                    </h6>
-                                </Col>
-                            </Row>
-                        </Card>
+                        {
+                            list_goods.map(item => {
+                                return (
+                                    <Card style={{ width: '100%', height: 150 }}
+                                        bodyStyle={{ padding: 10 }}
+                                        key={item.gid}
+                                    >
+                                        <Row>
+                                            <Col span={8}>
+                                                <img src={item.imgurl} alt="" />
+                                            </Col>
+                                            <Col span={16} className="goods_content">
+                                                <h3>{item.name}</h3>
+                                                <h5>
+                                                    {/* {
+                                                        if(item.icons_show.length){
+                                                            item.icons_show.map(item=>{
 
+                                                            })
+                                                        }
+                                                    } */}
+                                                    <Tag className="goods_content_tag1">热门推荐</Tag>
+                                                    <Tag className="goods_content_tag1">畅销行程</Tag>
+                                                    {/* <Tag className="goods_content_tag2">当地特色体验</Tag> */}
+                                                </h5>
+                                                <h6>
+                                                    <span className="sell_price">
+                                                        <strong>
+                                                            ￥{item.sell_price}
+                                                        </strong>
+                                                        /起
+                                                    </span>
+                                                    <span className="market_price">
+                                                        原价：￥{item.market_price}
+                                                    </span>
+                                                </h6>
+                                            </Col>
+                                        </Row>
+                                    </Card>
+                                )
+                            })
+                        }
 
-                        <Card style={{ width: '100%', height: 150 }}
-                            bodyStyle={{ padding: 10 }}
-                        >
-                            <Row>
-                                <Col span={8}>
-                                    <img src="//m.tuniucdn.com/fb2/t1/G4/M00/0E/73/Cii_J1zG0dSIcsN4ACyN4wBWZYMAAFmrQDf1xgALI37945_w640_h480_c1_t0.png" alt="" />
-                                </Col>
-                                <Col span={16} className="goods_content">
-                                    <h3>2020新年悉尼海港跨年烟花船(含晚餐+两场烟花表演)</h3>
-                                    <h5>
-                                        <Tag className="goods_content_tag1">热门推荐</Tag>
-                                        <Tag className="goods_content_tag1">畅销行程</Tag>
-                                        <Tag className="goods_content_tag2">当地特色体验</Tag>
-                                    </h5>
-                                    <h6>
-                                        <span className="sell_price">
-                                            <strong>
-                                                ￥1,814
-                                            </strong>
-                                            /起
-                                        </span>
-                                        <span className="market_price">
-                                            原价：￥1,880
-                                        </span>
-                                    </h6>
-                                </Col>
-                            </Row>
-                        </Card>
-
-
-                        <Card style={{ width: '100%', height: 150 }}
-                            bodyStyle={{ padding: 10 }}
-                        >
-                            <Row>
-                                <Col span={8}>
-                                    <img src="https://img.tourscool.com/images/product/06701c8e3bc43612cbfdec822c43defd.jpg/600x338" alt="" />
-                                </Col>
-                                <Col span={16} className="goods_content">
-                                    <h3>2020新年悉尼海港跨年烟花船(含晚餐+两场烟花表演)</h3>
-                                    <h5>
-                                        <Tag className="goods_content_tag1">热门推荐</Tag>
-                                        <Tag className="goods_content_tag1">畅销行程</Tag>
-                                        <Tag className="goods_content_tag2">当地特色体验</Tag>
-                                    </h5>
-                                    <h6>
-                                        <span className="sell_price">
-                                            <strong>
-                                                ￥1,814
-                                            </strong>
-                                            /起
-                                        </span>
-                                        <span className="market_price">
-                                            原价：￥1,880
-                                        </span>
-                                    </h6>
-                                </Col>
-                            </Row>
-                        </Card>
-
-
-                        <Card style={{ width: '100%', height: 150 }}
-                            bodyStyle={{ padding: 10 }}
-                        >
-                            <Row>
-                                <Col span={8}>
-                                    <img src={require('../../assets/img/1.jpg')} alt="" />
-                                </Col>
-                                <Col span={16} className="goods_content">
-                                    <h3>2020新年悉尼海港跨年烟花船(含晚餐+两场烟花表演)</h3>
-                                    <h5>
-                                        <Tag className="goods_content_tag1">热门推荐</Tag>
-                                        <Tag className="goods_content_tag1">畅销行程</Tag>
-                                        <Tag className="goods_content_tag2">当地特色体验</Tag>
-                                    </h5>
-                                    <h6>
-                                        <span className="sell_price">
-                                            <strong>
-                                                ￥1,814
-                                            </strong>
-                                            /起
-                                        </span>
-                                        <span className="market_price">
-                                            原价：￥1,880
-                                        </span>
-                                    </h6>
-                                </Col>
-                            </Row>
-                        </Card>
-
-
-                        <Card style={{ width: '100%', height: 150 }}
-                            bodyStyle={{ padding: 10 }}
-                        >
-                            <Row>
-                                <Col span={8}>
-                                    <img src={require('../../assets/img/1.jpg')} alt="" />
-                                </Col>
-                                <Col span={16} className="goods_content">
-                                    <h3>2020新年悉尼海港跨年烟花船(含晚餐+两场烟花表演)</h3>
-                                    <h5>
-                                        <Tag className="goods_content_tag1">热门推荐</Tag>
-                                        <Tag className="goods_content_tag1">畅销行程</Tag>
-                                        <Tag className="goods_content_tag2">当地特色体验</Tag>
-                                    </h5>
-                                    <h6>
-                                        <span className="sell_price">
-                                            <strong>
-                                                ￥1,814
-                                            </strong>
-                                            /起
-                                        </span>
-                                        <span className="market_price">
-                                            原价：￥1,880
-                                        </span>
-                                    </h6>
-                                </Col>
-                            </Row>
-                        </Card>
-
-
-                        <Card style={{ width: '100%', height: 150 }}
-                            bodyStyle={{ padding: 10 }}
-                        >
-                            <Row>
-                                <Col span={8}>
-                                    <img src={require('../../assets/img/1.jpg')} alt="" />
-                                </Col>
-                                <Col span={16} className="goods_content">
-                                    <h3>2020新年悉尼海港跨年烟花船(含晚餐+两场烟花表演)</h3>
-                                    <h5>
-                                        <Tag className="goods_content_tag1">热门推荐</Tag>
-                                        <Tag className="goods_content_tag1">畅销行程</Tag>
-                                        <Tag className="goods_content_tag2">当地特色体验</Tag>
-                                    </h5>
-                                    <h6>
-                                        <span className="sell_price">
-                                            <strong>
-                                                ￥1,814
-                                            </strong>
-                                            /起
-                                        </span>
-                                        <span className="market_price">
-                                            原价：￥1,880
-                                        </span>
-                                    </h6>
-                                </Col>
-                            </Row>
-                        </Card>
                     </Content>
                 </Layout>
             </div >
