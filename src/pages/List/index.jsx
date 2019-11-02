@@ -1,25 +1,25 @@
 import React from 'react';
 import './List.scss';
 import axios from 'axios'
-import { Layout, Menu, Row, Col, Card, Tabs, Tag } from 'antd';
+import { Layout, Row, Col, Card, Tabs, Tag } from 'antd';
 import 'antd/dist/antd.css';
 const { Header, Content } = Layout;
 const { TabPane } = Tabs;
 
 class List extends React.Component {
     state = {
-        current: 'tuijian',
         list_goods: []
     }
 
-    handleClick = e => {
-        console.log('click ', e);
-        this.setState({
-            current: e.key,
+    callback = async key => {
+        // console.log(key);
+        let { data: { data } } = await axios.post("http://127.0.0.1:8827/mygoods/list", {
+            type: key
         });
-    };
-    callback = key => {
-        console.log(key);
+        // console.log(data);
+        this.setState({
+            list_goods: data,
+        });
     }
 
     async componentDidMount() {
@@ -27,7 +27,7 @@ class List extends React.Component {
             type: "tuijian"
         });
         // return data;
-        console.log(data);
+        // console.log(data);
         // this.state.list_goods = data;
         this.setState({
             list_goods: data,
@@ -40,64 +40,16 @@ class List extends React.Component {
             <div className="list">
                 <Layout>
                     <Header style={{ backgroundColor: 'white', padding: 0, height: 44 }}>
-
-                        {/* <Menu onClick={this.handleClick}
-                            selectedKeys={[this.state.current]}
-                            mode="horizontal"
-                            forceSubMenuRender='true'
-                            inlineIndent="100"
-                            style={{ paddingLeft: '10px;' }}
-                        >
-                            <Menu.Item key="tuijian">
-                                稀饭推荐
-                            </Menu.Item>
-                            <Menu.Item key="gentuan">
-                                当地跟团
-                            </Menu.Item>
-                            <Menu.Item key="wanle">
-                                当地玩乐
-                            </Menu.Item>
-                            <Menu.Item key="xiaotuan">
-                                精品小团
-                            </Menu.Item>
-                            <Menu.Item key="youlun">
-                                邮轮
-                            </Menu.Item>
-                        </Menu> */}
-                        {/* <Row gutter={{ xs: 4, sm: 8, md: 12 }}>
-                            <Col span={5}>
-                            </Col>
-                            <Col span={5}>
-                            </Col>
-                            <Col span={5}>
-                            </Col>
-                            <Col span={5}>
-                            </Col>
-                            <Col span={4}>
-                            </Col>
-                        </Row> */}
                         <Tabs defaultActiveKey="1"
                             onChange={this.callback}
                             size="small"
-
                         >
-                            <TabPane tab="稀饭推荐" key="1">
-
-                            </TabPane>
-                            <TabPane tab="当地跟团" key="2">
-
-                            </TabPane>
-                            <TabPane tab="当地玩乐" key="3">
-
-                            </TabPane>
-                            <TabPane tab="精品小团" key="4">
-
-                            </TabPane>
-                            <TabPane tab="邮轮" key="5">
-
-                            </TabPane>
+                            <TabPane tab="稀饭推荐" key="tuijian"></TabPane>
+                            <TabPane tab="当地跟团" key="gentuan"></TabPane>
+                            <TabPane tab="当地玩乐" key="wanle"></TabPane>
+                            <TabPane tab="精品小团" key="xiaotuan"></TabPane>
+                            <TabPane tab="邮轮" key="youlun"></TabPane>
                         </Tabs>
-
                     </Header>
                     <Content>
                         {
@@ -142,7 +94,6 @@ class List extends React.Component {
                                 )
                             })
                         }
-
                     </Content>
                 </Layout>
             </div >
