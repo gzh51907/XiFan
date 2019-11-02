@@ -22,14 +22,8 @@ class List extends React.Component {
     }
 
     async componentDidMount() {
-        let data = await axios.post("https://m.tourscool.com/api/products", {
-            params: {
-                t: 1572608005,
-                type: 2,
-                page: 1,
-                page_size: 9,
-
-            }
+        let { data } = await axios.post("http://127.0.0.1:8827/mygoods/list", {
+            type: "tuijian"
         });
         // return data;
 
@@ -106,7 +100,7 @@ class List extends React.Component {
                         >
                             <Row>
                                 <Col span={8}>
-                                    <img src={require('./1.jpg')} alt="" />
+                                    <img src={require('../../assets/img/1.jpg')} alt="" />
                                 </Col>
                                 <Col span={16} className="goods_content">
                                     <h3>2020新年悉尼海港跨年烟花船(含晚餐+两场烟花表演)</h3>
@@ -136,7 +130,7 @@ class List extends React.Component {
                         >
                             <Row>
                                 <Col span={8}>
-                                    <img src="https://img.tourscool.com/images/product/75151f8af25acfbd424d66cb6d04f442.jpg" alt="" />
+                                    <img src="//m.tuniucdn.com/fb2/t1/G4/M00/0E/73/Cii_J1zG0dSIcsN4ACyN4wBWZYMAAFmrQDf1xgALI37945_w640_h480_c1_t0.png" alt="" />
                                 </Col>
                                 <Col span={16} className="goods_content">
                                     <h3>2020新年悉尼海港跨年烟花船(含晚餐+两场烟花表演)</h3>
@@ -166,7 +160,7 @@ class List extends React.Component {
                         >
                             <Row>
                                 <Col span={8}>
-                                    <img src={require('./1.jpg')} alt="" />
+                                    <img src="https://img.tourscool.com/images/product/06701c8e3bc43612cbfdec822c43defd.jpg/600x338" alt="" />
                                 </Col>
                                 <Col span={16} className="goods_content">
                                     <h3>2020新年悉尼海港跨年烟花船(含晚餐+两场烟花表演)</h3>
@@ -196,7 +190,7 @@ class List extends React.Component {
                         >
                             <Row>
                                 <Col span={8}>
-                                    <img src={require('./1.jpg')} alt="" />
+                                    <img src={require('../../assets/img/1.jpg')} alt="" />
                                 </Col>
                                 <Col span={16} className="goods_content">
                                     <h3>2020新年悉尼海港跨年烟花船(含晚餐+两场烟花表演)</h3>
@@ -226,7 +220,7 @@ class List extends React.Component {
                         >
                             <Row>
                                 <Col span={8}>
-                                    <img src={require('./1.jpg')} alt="" />
+                                    <img src={require('../../assets/img/1.jpg')} alt="" />
                                 </Col>
                                 <Col span={16} className="goods_content">
                                     <h3>2020新年悉尼海港跨年烟花船(含晚餐+两场烟花表演)</h3>
@@ -256,7 +250,7 @@ class List extends React.Component {
                         >
                             <Row>
                                 <Col span={8}>
-                                    <img src={require('./1.jpg')} alt="" />
+                                    <img src={require('../../assets/img/1.jpg')} alt="" />
                                 </Col>
                                 <Col span={16} className="goods_content">
                                     <h3>2020新年悉尼海港跨年烟花船(含晚餐+两场烟花表演)</h3>
