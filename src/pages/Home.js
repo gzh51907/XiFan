@@ -13,7 +13,8 @@ class Home extends Component{
             HotDestination:[],
             sale:[],
             homeicon:[],
-            goods:[]
+            goods:[],
+            show:false
         }
     }
     async componentWillMount(){
@@ -27,7 +28,7 @@ class Home extends Component{
             homeicon:data[0].indexData[3].data,
             goods:data[0].goods,
         })
-        console.log(this.state.goods)
+        // console.log(this.state.goods)
     }
     componentDidMount() {
         new Swiper('.swiper-container-destination', {
@@ -42,10 +43,34 @@ class Home extends Component{
             observer:true,
             observeParents:true,
         })
+        window.addEventListener('scroll',()=>{
+            let scrollTop = document.documentElement.scrollTop;
+            if(scrollTop > 600){
+              this.setState({
+                show : true
+              })
+            }else{
+              this.setState({
+                show : false
+              })
+            }
+        })
+    }
+
+
+    goTop(){
+        let scrollToTop = window.setInterval(function() {
+          let pos = window.pageYOffset
+          if ( pos > 0 ) {
+              window.scrollTo( 0, pos - 30 );
+          } else {
+              window.clearInterval( scrollToTop )
+          }
+      }, 2)
     }
 
     render() {
-        let {goods,sale,HotDestination,homeicon,banner} = this.state
+        let {goods,sale,HotDestination,homeicon,banner,show} = this.state
         return(
             <div className="home">
                 <header className="header">
@@ -118,11 +143,11 @@ class Home extends Component{
 
                 <div className="sale-time-box">
                     <h1 className="title">限时特价</h1>
-                    <div className="swiper-container swiper-container-sale">
+                    <div className="swiper-container swiper-container-sale" style={{paddingLeft:'12px'}}>
                         <div className="swiper-wrapper">
                         {
                             sale.map(item=>(
-                            <div className="swiper-slide" style={{paddingLeft:'12px'}} key={item.product_id}>
+                            <div className="swiper-slide" key={item.product_id}>
                                         <div className="snap-up-item">
                                             <div className="banner">
                                                 <img src={item.image} alt="banner"/>
@@ -161,7 +186,7 @@ class Home extends Component{
                                             <div className="tag-icon-tour">
                                                 {
                                                     (item.icons_tour).map(item=>(
-                                                        <span >{item.title}</span>
+                                                        <span key={item.title}>{item.title}</span>
                                                     ))
                                                 }
                                             </div>
@@ -176,6 +201,21 @@ class Home extends Component{
                         }
                     </div>
                 </div>
+
+                {
+                    show &&
+                    <div className="drift-wrap">
+                        <div>
+                            <img src="https://m.tourscool.com/_nuxt/img/0e37d63.png" alt=""/>
+                        </div>
+                        <div>
+                            <img src="https://m.tourscool.com/_nuxt/img/8c3038d.png" alt=""/>
+                        </div>
+                        <div onClick={this.goTop}>
+                            <img src="https://m.tourscool.com/_nuxt/img//862e402.png" alt=""/>
+                        </div>
+                    </div>
+                }
             </div>
         ) 
     }
