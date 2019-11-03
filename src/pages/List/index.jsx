@@ -14,7 +14,7 @@ class List extends React.Component {
 
     callback = async key => {
         // console.log(key);
-        let { data: { data } } = await axios.post("http://127.0.0.1:8827/mygoods/list", {
+        let { data: { data } } = await axios.post("http://10.3.133.163:8827/mygoods/list", {
             type: key
         });
         this.setState({
@@ -24,14 +24,14 @@ class List extends React.Component {
 
     async componentDidMount() {
         if (this.props.location.state) {
-            let { data: { data: data1 } } = await axios.post("http://127.0.0.1:8827/mygoods/list", {
+            let { data: { data: data1 } } = await axios.post("http://10.3.133.163:8827/mygoods/list", {
                 type: this.props.location.state.type
             });
             this.setState({
                 list_goods: data1,
             });
         } else {
-            let { data: { data } } = await axios.post("http://127.0.0.1:8827/mygoods/list", {
+            let { data: { data } } = await axios.post("http://10.3.133.163:8827/mygoods/list", {
                 type: 'tuijian'
             });
             // return data;
