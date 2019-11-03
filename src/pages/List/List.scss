@@ -34,6 +34,30 @@
         // .ant-tabs-nav .ant-tabs-tab:active {
         //     color: #EF9A1A;
         // }
+        .ant-row {
+            height: 24px;
+
+            .ant-col {
+                height: 100%;
+                position: relative;
+
+                .goback {
+                    position: absolute;
+                    left: 10px;
+                    top: 4px;
+                }
+
+                .search {
+                    background-color: #1890ff;
+                    border-radius: 20px;
+                    position: absolute;
+                    left: 10px;
+                    top: 5px;
+                    height: 20px;
+                    width: 35px;
+                }
+            }
+        }
     }
 
     main {

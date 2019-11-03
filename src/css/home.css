@@ -1,13 +1,13 @@
 .home{
     background: #f1f1f1;
 }
-.header {
+.home .header {
     position: absolute;
     width: 100%;
     top: 0;
     z-index: 2100;
 }
-.header .search-box {
+.home .header .search-box {
     height: 1.173333rem;
     padding: 0 0.4rem;
     display: -webkit-box;
@@ -27,7 +27,7 @@
     transition: 0.3s all;
     width: 100%;
 }
-.search-box .left {
+.home .search-box .left {
     width: 8.24rem;
     height: 0.96rem;
     padding: 0.16rem 0.186667rem;
@@ -47,46 +47,46 @@
     -o-transition: 0.3s all;
     transition: 0.3s all;
 }
-.van-icon {
+.home .van-icon {
     position: relative;
     font: 14px/1 "vant-icon";
     font-size: inherit;
     text-rendering: auto;
     -webkit-font-smoothing: antialiased;
 }
-.header .search-box .left span {
+.home .header .search-box .left span {
     font-size: 0.293333rem;
 }
-.header .search-box .right {
+.home .header .search-box .right {
     font-weight: bold;
     font-size: .746667rem;
 }
 
 
-.banner {
+.home .banner {
     height: 5.6rem;
 }
-.ant-carousel .slick-slide {
+.home .ant-carousel .slick-slide {
     text-align: center;
     height: 5.6rem;
     line-height: 5.6rem;
     overflow: hidden;
 }
-.banner img{
+.home .banner img{
     width: 100%;
 }
-.ant-carousel .slick-dots li button{
+.home .ant-carousel .slick-dots li button{
     width: 6px;
     height: 6px;
     border-radius: 6px;
     margin: 0 2px;
 }
-.ant-carousel .slick-dots li.slick-active button{
+.home .ant-carousel .slick-dots li.slick-active button{
     width: 16px;
 }
 
 
-.swiper-container {
+.home .swiper-container {
     margin: 0 auto;
     position: relative;
     overflow: hidden;
@@ -94,34 +94,33 @@
     padding: 0;
     z-index: 1;
   }
-.entry-block {
+.home .entry-block {
     padding: 0.693333rem 0 0.333333rem;
     background-color: #fff;
     text-align: center;
   }
-.swiper-slide {
+.home .entry-block .swiper-slide {
     -ms-flex-negative: 0;
     flex-shrink: 0;
-    width: 68.6px;
     margin-right: 8px;
     height: 100%;
     position: relative;
 }
-.entry-block .title {
+.home .entry-block .title {
     color: #191919;
     font-size: 0.32rem;
   }
-.entry-block .swiper-slide img {
+.home .entry-block .swiper-slide img {
     width: 1.173333rem;
     height: 1.173333rem;
 }
 
-.newnav {
+.home .newnav {
     background-color: #fff;
     height: 1.7rem;
     width: 100%;
   }
-.newnav div:nth-child(1) {
+.home .newnav div:nth-child(1) {
     width: 4.56rem;
     height: 1.6rem;
     float: left;
@@ -134,7 +133,7 @@
     margin-left: 0.426667rem;
     padding-left: 0.32rem;
 }
-.newnav div:nth-child(1) .p1 {
+.home .newnav div:nth-child(1) .p1 {
     color: #393939;
     font-weight: bold;
     font-size: 0.373333rem;
@@ -142,13 +141,13 @@
     line-height: 0.533333rem;
     margin-top: 0.2rem;
   }
-.newnav div:nth-child(1) .p2 {
+.home .newnav div:nth-child(1) .p2 {
     color: #B1B1B1;
     text-align: left;
     line-height: 0.8rem;
     font-size: 0.32rem;
 }
-.newnav div:nth-child(2) {
+.home .newnav div:nth-child(2) {
     width: 4.56rem;
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
@@ -392,4 +391,19 @@
 .hot-item .price-wrap .unit {
     font-size: 0.32rem;
     color: #ff0000;
+}
+.drift-wrap {
+    width: 1.173333rem;
+    height: 5.333333rem;
+    position: fixed;
+    right: 0.133333rem;
+    bottom: 1.066667rem;
+    font-size: 0.48rem;
+    z-index: 2;
+}
+.drift-wrap img {
+    display: block;
+    margin-bottom: 5px;
+    height: 1.173333rem;
+    width: 1.173333rem;
 }

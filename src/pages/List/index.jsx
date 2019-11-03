@@ -1,37 +1,59 @@
 import React from 'react';
 import './List.scss';
 import axios from 'axios'
-import { Layout, Row, Col, Card, Tabs, Tag } from 'antd';
+import { Layout, Row, Col, Card, Tabs, Tag, Icon } from 'antd';
 import 'antd/dist/antd.css';
 const { Header, Content } = Layout;
 const { TabPane } = Tabs;
 
 class List extends React.Component {
     state = {
-        list_goods: []
+        list_goods: [],
+        tab_key: (this.props.location.state) ? this.props.location.state.type : 'tuijian'
     }
 
     callback = async key => {
         // console.log(key);
-        let { data: { data } } = await axios.post("http://127.0.0.1:8827/mygoods/list", {
+        let { data: { data } } = await axios.post("http://10.3.133.163:8827/mygoods/list", {
             type: key
         });
-        // console.log(data);
         this.setState({
-            list_goods: data,
+            list_goods: data.reverse(),
         });
     }
 
     async componentDidMount() {
-        let { data: { data } } = await axios.post("http://127.0.0.1:8827/mygoods/list", {
-            type: "tuijian"
-        });
-        // return data;
-        // console.log(data);
-        // this.state.list_goods = data;
-        this.setState({
-            list_goods: data,
-        });
+        if (this.props.location.state) {
+            let { data: { data: data1 } } = await axios.post("http://10.3.133.163:8827/mygoods/list", {
+                type: this.props.location.state.type
+            });
+            this.setState({
+                list_goods: data1.reverse(),
+            });
+        } else {
+            let { data: { data } } = await axios.post("http://10.3.133.163:8827/mygoods/list", {
+                type: 'tuijian'
+            });
+            // return data;
+            // this.state.list_goods = data;
+            this.setState({
+                list_goods: data.reverse(),
+            });
+        }
+    }
+
+    goto = id => {
+        this.props.history.push(`/detail/${id}`);
+        // this.props.history.push({
+        //     pathname: '/detail',
+        //     state: {
+        //         id
+        //     }
+        // })
+    }
+
+    goback = () => {
+        this.props.history.push('/home');
     }
 
     render() {
@@ -39,8 +61,15 @@ class List extends React.Component {
         return (
             <div className="list">
                 <Layout>
-                    <Header style={{ backgroundColor: 'white', padding: 0, height: 44 }}>
-                        <Tabs defaultActiveKey="1"
+                    <Header style={{ backgroundColor: 'white', padding: 0 }}>
+                        <Row>
+                            <Col>
+                                <div className="search" onClick={this.goback}>
+                                    <Icon type="left" className="goback"></Icon>
+                                </div>
+                            </Col>
+                        </Row>
+                        <Tabs defaultActiveKey={this.state.tab_key}
                             onChange={this.callback}
                             size="small"
                         >
@@ -58,6 +87,7 @@ class List extends React.Component {
                                     <Card style={{ width: '100%', height: 150 }}
                                         bodyStyle={{ padding: 10 }}
                                         key={item.gid}
+                                        onClick={this.goto.bind(null, item.gid)}
                                     >
                                         <Row>
                                             <Col span={8}>
