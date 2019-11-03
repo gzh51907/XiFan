@@ -5,7 +5,7 @@ import Home from './pages/Home'
 import List from './pages/List'
 import Adduser from './pages/adduser/adduser'
 import Detail from './pages/detail/detail'
-
+import Search from './search'
 
 class App extends Component {
     render() {
@@ -13,6 +13,7 @@ class App extends Component {
             <div>
                 <Switch>
                     <Route path="/home" component={Home} />
+                    <Route path="/search" component={Search} />
                     <Route path="/list" component={List} />
                     <Route path="/detail" component={Detail} />
                     <Route path="/adduser" component={Adduser} />
