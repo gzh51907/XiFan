@@ -9,8 +9,12 @@ class detail extends Component {
 
     }
 
+    componentDidMount() {
+        console.log(this.props);
+    }
+
     render() {
-        return <div className='detail'>
+        return <div className="detail">
             <Layout>
                 <Header style={{ background: '#fff', padding: 0, height: '46px', lineHeight: '46px', }}>
                     <Row>
