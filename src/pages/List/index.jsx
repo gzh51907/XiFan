@@ -1,7 +1,7 @@
 import React from 'react';
 import './List.scss';
 import axios from 'axios'
-import { Layout, Row, Col, Card, Tabs, Tag } from 'antd';
+import { Layout, Row, Col, Card, Tabs, Tag, Icon } from 'antd';
 import 'antd/dist/antd.css';
 const { Header, Content } = Layout;
 const { TabPane } = Tabs;
@@ -18,7 +18,7 @@ class List extends React.Component {
             type: key
         });
         this.setState({
-            list_goods: data,
+            list_goods: data.reverse(),
         });
     }
 
@@ -28,7 +28,7 @@ class List extends React.Component {
                 type: this.props.location.state.type
             });
             this.setState({
-                list_goods: data1,
+                list_goods: data1.reverse(),
             });
         } else {
             let { data: { data } } = await axios.post("http://10.3.133.163:8827/mygoods/list", {
@@ -37,7 +37,7 @@ class List extends React.Component {
             // return data;
             // this.state.list_goods = data;
             this.setState({
-                list_goods: data,
+                list_goods: data.reverse(),
             });
         }
     }
@@ -52,12 +52,23 @@ class List extends React.Component {
         // })
     }
 
+    goback = () => {
+        this.props.history.push('/home');
+    }
+
     render() {
         let { list_goods } = this.state;
         return (
             <div className="list">
                 <Layout>
-                    <Header style={{ backgroundColor: 'white', padding: 0, height: 44 }}>
+                    <Header style={{ backgroundColor: 'white', padding: 0 }}>
+                        <Row>
+                            <Col>
+                                <div className="search" onClick={this.goback}>
+                                    <Icon type="left" className="goback"></Icon>
+                                </div>
+                            </Col>
+                        </Row>
                         <Tabs defaultActiveKey={this.state.tab_key}
                             onChange={this.callback}
                             size="small"
