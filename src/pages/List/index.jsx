@@ -1,8 +1,8 @@
 import React from 'react';
-import 'antd/dist/antd.css';
 import './List.scss';
 import axios from 'axios'
 import { Layout, Row, Col, Card, Tabs, Tag } from 'antd';
+import 'antd/dist/antd.css';
 const { Header, Content } = Layout;
 const { TabPane } = Tabs;
 
