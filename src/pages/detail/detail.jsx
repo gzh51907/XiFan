@@ -14,7 +14,7 @@ class detail extends Component {
     }
 
     render() {
-        return <div >
+        return <div className="detail">
             <Layout>
                 <Header style={{ background: '#fff', padding: 0, height: '46px', lineHeight: '46px', }}>
                     <Row>

@@ -71,22 +71,22 @@ class Home extends Component {
                 <div className="banner">
                     <Carousel autoplay>
                         <div>
-                            <img src="https://assets.tourscool.com/uploads/inn/2019/10/23/952/OhbJ6K2fifm2qkp1dH5IjYoSPfA.jpg" />
+                            <img src="https://assets.tourscool.com/uploads/inn/2019/10/23/952/OhbJ6K2fifm2qkp1dH5IjYoSPfA.jpg" alt="" />
                         </div>
                         <div>
-                            <img src="http://assets.tourscool.com/uploads/inn/2019/10/23/952/ggoPDFxBYN0ac_fcyybQGlyCEzU.jpg" />
+                            <img src="http://assets.tourscool.com/uploads/inn/2019/10/23/952/ggoPDFxBYN0ac_fcyybQGlyCEzU.jpg" alt="" />
                         </div>
                         <div>
-                            <img src="http://assets.tourscool.com/uploads/inn/2019/10/15/952/0WrYwP2OyFGSOsGPBTzzbtsBUuo.jpg" />
+                            <img src="http://assets.tourscool.com/uploads/inn/2019/10/15/952/0WrYwP2OyFGSOsGPBTzzbtsBUuo.jpg" alt="" />
                         </div>
                         <div>
-                            <img src="http://assets.tourscool.com/uploads/inn/2019/10/15/952/9pCLhgGLb4tY5kOgvSfGfh-SN3w.jpg" />
+                            <img src="http://assets.tourscool.com/uploads/inn/2019/10/15/952/9pCLhgGLb4tY5kOgvSfGfh-SN3w.jpg" alt="" />
                         </div>
                         <div>
-                            <img src="http://assets.tourscool.com/uploads/inn/2019/08/27/952/8248kb4LBUpYwG0g-m9g6Jn12DA.jpg" />
+                            <img src="http://assets.tourscool.com/uploads/inn/2019/08/27/952/8248kb4LBUpYwG0g-m9g6Jn12DA.jpg" alt="" />
                         </div>
                         <div>
-                            <img src="http://assets.tourscool.com/uploads/inn/2019/07/17/952/_lL5uBjpK8N7ZBbH_tDUvuW2DCs.jpg" />
+                            <img src="http://assets.tourscool.com/uploads/inn/2019/07/17/952/_lL5uBjpK8N7ZBbH_tDUvuW2DCs.jpg" alt="" />
                         </div>
                     </Carousel>
                 </div>

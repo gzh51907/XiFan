@@ -1,6 +1,4 @@
 .list {
-
-
     header {
         // position: fixed;
         // z-index: 9;
@@ -23,6 +21,10 @@
                 color: #EF9A1A !important;
                 border-bottom: 2px solid #EF9A1A !important;
             }
+        }
+
+        .ant-tabs {
+            // overflow-x: auto;
         }
 
         // .ant-tabs-ink-bar .ant-tabs-ink-bar-animated {

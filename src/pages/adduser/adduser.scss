@@ -1,75 +1,91 @@
-body{
+.adduser {
+
+
     margin: 0;
     padding: 0;
-}
-#adduser{
-    color: #a8a8a8;
-}
-.tour{
-    height: 52px;
-    line-height: 52px;
-    margin-top: 15px;
-   padding-left: 20px;
-    background: #fff;
-    font-weight: 800;
-    font-size: 20px;
-    border-bottom:1px solid #d9d9d9 ;
-}
-.biao1 {
-    padding: 30px;
-    p{
-    background: #f1f1f1;
-    height: 33px;
-    line-height: 33px;
-    font-size: 16px;
-    padding-left: 15px;
-    }
-    form{
-        box-sizing: border-box;
-        padding: 10px 15px;
-        border-bottom:1px solid #d9d9d9 ;
-        label{
-            display: inline-block;
-            width: 66px;
-            text-align: right;
-            margin-right: 10px;
-            font-size: 14px;
-        }
-        input{
-            border: none;
-        }
-    }
-  
-}
 
-.ant-layout-content{
-    margin: 20px;
-    .ant-collapse {
-        border: none;
+    #adduser {
+        color: #a8a8a8;
     }
-}
-.biao2{
-    background: #fff;
-    padding: 30px;
-    p{
-        height: 33px;
-        line-height: 33px;
-        font-size: 16px;
-        padding-left: 15px;
+
+    .tour {
+        height: 52px;
+        line-height: 52px;
+        margin-top: 15px;
+        padding-left: 20px;
+        background: #fff;
+        font-weight: 800;
+        font-size: 20px;
+        border-bottom: 1px solid #d9d9d9;
     }
-    form{
-        box-sizing: border-box;
-        padding: 10px 15px;
-        border-bottom:1px solid #d9d9d9 ;
-        label{
-            display: inline-block;
-            width: 66px;
-            text-align: right;
-            margin-right: 10px;
-            font-size: 14px;
+
+    .biao1 {
+        padding: 30px;
+
+        p {
+            background: #f1f1f1;
+            height: 33px;
+            line-height: 33px;
+            font-size: 16px;
+            padding-left: 15px;
         }
-        input{
+
+        form {
+            box-sizing: border-box;
+            padding: 10px 15px;
+            border-bottom: 1px solid #d9d9d9;
+
+            label {
+                display: inline-block;
+                width: 66px;
+                text-align: right;
+                margin-right: 10px;
+                font-size: 14px;
+            }
+
+            input {
+                border: none;
+            }
+        }
+
+    }
+
+    .ant-layout-content {
+        margin: 20px;
+
+        .ant-collapse {
             border: none;
         }
-    } 
+    }
+
+    .biao2 {
+        background: #fff;
+        padding: 30px;
+
+        p {
+            height: 33px;
+            line-height: 33px;
+            font-size: 16px;
+            padding-left: 15px;
+        }
+
+        form {
+            box-sizing: border-box;
+            padding: 10px 15px;
+            border-bottom: 1px solid #d9d9d9;
+
+            label {
+                display: inline-block;
+                width: 66px;
+                text-align: right;
+                margin-right: 10px;
+                font-size: 14px;
+            }
+
+            input {
+                border: none;
+            }
+        }
+    }
+
 }
