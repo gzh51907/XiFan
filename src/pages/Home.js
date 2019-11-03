@@ -14,12 +14,12 @@ class Home extends Component{
             sale:[],
             homeicon:[],
             goods:[],
-            show:false
+            show:false,
         }
     }
     async componentWillMount(){
         let {data} = await Axios({
-            baseURL:'http://127.0.0.1:3233/home'
+            baseURL:'http://127.0.0.1:3233/home/home'
         })
         this.setState({
             banner:data[0].indexData[0].data,
