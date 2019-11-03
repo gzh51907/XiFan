@@ -39,7 +39,7 @@ class adduser extends Component {
                             <Icon type="left" style={{ fontSize: '16px', marginLeft: '15px' }} />
                         </Col>
                         <Col span={12} style={{ textAlign: 'center', fontSize: '18px' }}>确认订单</Col>
-                        <Col span={6} style={{ textAlign: 'right', paddingRight: '15px', color: 'blue', fontSize: '16px' }}>登录</Col>
+                        <Col span={6} style={{ textAlign: 'right', paddingRight: '15px', color: 'blue', fontSize: '16px' }}></Col>
                     </Row>
                 </Header>
                 <Content style={{ marginLeft: '20px', marginRight: '20px' }}>
