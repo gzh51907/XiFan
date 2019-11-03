@@ -35,7 +35,7 @@ class detail extends Component {
     }
 
     goback = () => {
-        this.props.history.push('/list');
+        this.props.history.push('/mylist');
     }
 
     render() {

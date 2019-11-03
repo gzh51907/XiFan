@@ -9,18 +9,18 @@ class Home extends Component {
 
     constructor() {
         super();
-        this.state={
-            banner:[],
-            HotDestination:[],
-            sale:[],
-            homeicon:[],
-            goods:[],
-            show:false,
+        this.state = {
+            banner: [],
+            HotDestination: [],
+            sale: [],
+            homeicon: [],
+            goods: [],
+            show: false,
         }
     }
-    async componentWillMount(){
-        let {data} = await Axios({
-            baseURL:'http://127.0.0.1:3233/home/home'
+    async componentWillMount() {
+        let { data } = await Axios({
+            baseURL: 'http://127.0.0.1:3233/home/home'
         })
         this.setState({
             banner: data[0].indexData[0].data,
@@ -35,45 +35,45 @@ class Home extends Component {
     componentDidMount() {
         new Swiper('.swiper-container-destination', {
             slidesPerView: 5,
-            spaceBetween : 10,
-            observer:true,
-            observeParents:true,
+            spaceBetween: 10,
+            observer: true,
+            observeParents: true,
         })
         new Swiper('.swiper-container-sale', {
             slidesPerView: 1,
-            spaceBetween : 10,
-            observer:true,
-            observeParents:true,
+            spaceBetween: 10,
+            observer: true,
+            observeParents: true,
         })
-        window.addEventListener('scroll',()=>{
+        window.addEventListener('scroll', () => {
             let scrollTop = document.documentElement.scrollTop;
-            if(scrollTop > 600){
-              this.setState({
-                show : true
-              })
-            }else{
-              this.setState({
-                show : false
-              })
+            if (scrollTop > 600) {
+                this.setState({
+                    show: true
+                })
+            } else {
+                this.setState({
+                    show: false
+                })
             }
         })
     }
 
 
-    goTop(){
-        let scrollToTop = window.setInterval(function() {
-          let pos = window.pageYOffset
-          if ( pos > 0 ) {
-              window.scrollTo( 0, pos - 30 );
-          } else {
-              window.clearInterval( scrollToTop )
-          }
-      }, 2)
+    goTop() {
+        let scrollToTop = window.setInterval(function () {
+            let pos = window.pageYOffset
+            if (pos > 0) {
+                window.scrollTo(0, pos - 30);
+            } else {
+                window.clearInterval(scrollToTop)
+            }
+        }, 2)
     }
 
     goto = type => {
         this.props.history.push({
-            pathname: '/list',
+            pathname: '/mylist',
             state: {
                 type
             }
@@ -81,8 +81,8 @@ class Home extends Component {
     }
 
     render() {
-        let {goods,sale,HotDestination,homeicon,banner,show} = this.state
-        return(
+        let { goods, sale, HotDestination, homeicon, banner, show } = this.state
+        return (
             <div className="home">
                 <header className="header">
                     <div className="search-box">
@@ -99,9 +99,9 @@ class Home extends Component {
                 <div className="banner">
                     <Carousel autoplay>
                         {
-                            banner.map(item=>(
+                            banner.map(item => (
                                 <div key={item.title}>
-                                    <img src={item.image_url}/>
+                                    <img src={item.image_url} />
                                 </div>
                             ))
                         }
@@ -154,9 +154,9 @@ class Home extends Component {
                     </div>
                     <div className="hot-place">
                         {
-                            HotDestination.map(item=>(
+                            HotDestination.map(item => (
                                 <div className="hot-item" key={item.title}>
-                                    <img src={item.image_url} alt=""/>
+                                    <img src={item.image_url} alt="" />
                                     <div className="title">{item.title}</div>
                                 </div>
                             ))
@@ -166,28 +166,28 @@ class Home extends Component {
 
                 <div className="sale-time-box">
                     <h1 className="title">限时特价</h1>
-                    <div className="swiper-container swiper-container-sale" style={{paddingLeft:'12px'}}>
+                    <div className="swiper-container swiper-container-sale" style={{ paddingLeft: '12px' }}>
                         <div className="swiper-wrapper">
-                        {
-                            sale.map(item=>(
-                            <div className="swiper-slide" key={item.product_id}>
+                            {
+                                sale.map(item => (
+                                    <div className="swiper-slide" key={item.product_id}>
                                         <div className="snap-up-item">
                                             <div className="banner">
-                                                <img src={item.image} alt="banner"/>
+                                                <img src={item.image} alt="banner" />
                                             </div>
                                             <div className="desc">
-                                            <span className="tag tag1">自营自营</span>
-                                            <span>{item.name}</span>
+                                                <span className="tag tag1">自营自营</span>
+                                                <span>{item.name}</span>
                                             </div>
                                             <div className="price-wrap">
-                                                <span className="price">{item.special_price}</span> 
-                                                <span className="unit">/起</span> 
+                                                <span className="price">{item.special_price}</span>
+                                                <span className="unit">/起</span>
                                                 <span className="ori-price">{item.default_price}</span>
                                             </div>
                                         </div>
-                                        </div>
-                                    ))
-                                }
+                                    </div>
+                                ))
+                            }
                         </div>
                     </div>
                 </div>
@@ -204,11 +204,11 @@ class Home extends Component {
                                                 <img src={item.image} alt="banner" />
                                             </div>
                                             <div className="desc no-wrap-line2 imitate-ellipsis2">
-                                            {item.name}
+                                                {item.name}
                                             </div>
                                             <div className="tag-icon-tour">
                                                 {
-                                                    (item.icons_tour).map(item=>(
+                                                    (item.icons_tour).map(item => (
                                                         <span key={item.title}>{item.title}</span>
                                                     ))
                                                 }
@@ -229,13 +229,13 @@ class Home extends Component {
                     show &&
                     <div className="drift-wrap">
                         <div>
-                            <img src="https://m.tourscool.com/_nuxt/img/0e37d63.png" alt=""/>
+                            <img src="https://m.tourscool.com/_nuxt/img/0e37d63.png" alt="" />
                         </div>
                         <div>
-                            <img src="https://m.tourscool.com/_nuxt/img/8c3038d.png" alt=""/>
+                            <img src="https://m.tourscool.com/_nuxt/img/8c3038d.png" alt="" />
                         </div>
                         <div onClick={this.goTop}>
-                            <img src="https://m.tourscool.com/_nuxt/img//862e402.png" alt=""/>
+                            <img src="https://m.tourscool.com/_nuxt/img//862e402.png" alt="" />
                         </div>
                     </div>
                 }

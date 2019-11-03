@@ -11,7 +11,7 @@ import {
     withRouter
 } from 'react-router-dom';
 import List from './pages/List';
-import json from './/pages/s.json';
+import json from './pages/s.json';
 import Lists from './pages/Lists'
 import 'antd/dist/antd.css';
 
@@ -63,7 +63,7 @@ class Searchs extends Component {
                 <div className='search-wrap'>
                     {/* 列表 */}
                     <div>
-                        <Menu className='badge-bar' theme='light' onSelect={(obj) => console.log(obj)} defaultSelectedKeys={selected}  >
+                        <Menu className='badge-bar' theme='light' onSelect={(obj) => console.log(obj)} defaultSelectedKeys={['/0']}  >
                             {
                                 json.data.map((item, index) =>
 
@@ -71,8 +71,8 @@ class Searchs extends Component {
                                         margin: 0,
                                         padding: 0
                                     }}>
-
-                                        <Link to={{ pathname: '/' + index, state: json.data[index] }} style={{ paddingLeft: '0.426667rem' }}> <div>{item.cityName}</div>    </Link>
+                                        {/* to={{ pathname: '/' + index, state: json.data[index] }} */}
+                                        <Link to={{ pathname: '/search/' + index, state: json.data[index] }} style={{ paddingLeft: '0.426667rem' }}> <div>{item.cityName}</div>    </Link>
                                     </Menu.Item>
                                 )
                             }
@@ -80,16 +80,14 @@ class Searchs extends Component {
                     </div>
                     {/* 列表 */}
                     <div className='search-main'>
-                        <HashRouter>
-                            <Switch>
-                                {/* <Redirect from='/' to="/0"  component={List}/> */}
-                                <Route path="/0" component={List} exact />
-                                <Route render component={Lists} exact />
-                                {/* <Route path='/添加用户' component={login} />
-                            <Redirect from='/' to="/用户列表" />
-                            <Route render={() => <div><h1>404</h1></div>}></Route> */}
-                            </Switch>
-                        </HashRouter>
+
+                        <Switch>
+
+                            <Route path="/search/0" component={List} exact />
+                            {/* <Route render component={Lists} exact /> */}
+
+                        </Switch>
+
 
                         {/* <List key='list'></List> */}
                     </div>
