@@ -1,0 +1,7 @@
+{
+    "PORT": 8827,
+    "DBurl": "mongodb://127.0.0.1:27017",
+    "DBName": "xifan",
+    "secret": "jain",
+    "administrator": "true"
+}

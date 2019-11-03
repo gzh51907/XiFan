@@ -1,12 +1,13 @@
-import React,{Component} from 'react'
-import { Carousel,Icon } from 'antd';
+import React, { Component } from 'react'
+import { Carousel, Icon } from 'antd';
 import Swiper from 'swiper/js/swiper.js'
 import 'swiper/css/swiper.min.css'
 import '../css/home.css'
 import Axios from '../../node_modules/axios';
 
-class Home extends Component{
-    constructor(){
+class Home extends Component {
+
+    constructor() {
         super();
         this.state={
             banner:[],
@@ -22,14 +23,15 @@ class Home extends Component{
             baseURL:'http://127.0.0.1:3233/home/home'
         })
         this.setState({
-            banner:data[0].indexData[0].data,
-            HotDestination:data[0].indexData[1].data,
-            sale:data[0].indexData[2].data,
-            homeicon:data[0].indexData[3].data,
-            goods:data[0].goods,
+            banner: data[0].indexData[0].data,
+            HotDestination: data[0].indexData[1].data,
+            sale: data[0].indexData[2].data,
+            homeicon: data[0].indexData[3].data,
+            goods: data[0].goods,
         })
         // console.log(this.state.goods)
     }
+
     componentDidMount() {
         new Swiper('.swiper-container-destination', {
             slidesPerView: 5,
@@ -37,7 +39,7 @@ class Home extends Component{
             observer:true,
             observeParents:true,
         })
-        new Swiper('.swiper-container-sale',{
+        new Swiper('.swiper-container-sale', {
             slidesPerView: 1,
             spaceBetween : 10,
             observer:true,
@@ -69,6 +71,15 @@ class Home extends Component{
       }, 2)
     }
 
+    goto = type => {
+        this.props.history.push({
+            pathname: '/list',
+            state: {
+                type
+            }
+        });
+    }
+
     render() {
         let {goods,sale,HotDestination,homeicon,banner,show} = this.state
         return(
@@ -76,11 +87,11 @@ class Home extends Component{
                 <header className="header">
                     <div className="search-box">
                         <div className="left">
-                            <Icon type="search" className="van-icon"/>
+                            <Icon type="search" className="van-icon" />
                             <span>目的地/关键词</span>
                         </div>
                         <div className="right">
-                            <Icon type="user" className="van-icon"/>
+                            <Icon type="user" className="van-icon" />
                         </div>
                     </div>
                 </header>
@@ -99,14 +110,26 @@ class Home extends Component{
 
                 <div className="entry-block swiper-container swiper-container-destination">
                     <div className="swiper-wrapper" >
-                        {
-                            homeicon.map(item=>(
-                                <div className="swiper-slide" key={item.title}>
-                                    <img src={item.image_url} alt=""/>
-                                    <p className="title">{item.title}</p>
-                                </div>
-                            ))
-                        }
+                        <div className="swiper-slide" onClick={this.goto.bind(null, 'tuijian')}>
+                            <img src="https://assets.tourscool.com/uploads/inn/2019/07/24/952/V1DIqxhFFcoUSYLjcivub_qwZRo.png" alt="" />
+                            <p className="title">稀饭推荐</p>
+                        </div>
+                        <div className="swiper-slide" onClick={this.goto.bind(null, 'wanle')}>
+                            <img src="https://assets.tourscool.com/uploads/inn/2019/07/24/952/mXxtCra5hsG4Buqw6TOyOr6-bNA.png" alt="" />
+                            <p className="title">当地玩乐</p>
+                        </div>
+                        <div className="swiper-slide" onClick={this.goto.bind(null, 'gentuan')}>
+                            <img src="https://assets.tourscool.com/uploads/inn/2019/07/24/952/MkzS1-dg32N32BqVvlAkgEWDxkE.png" alt="" />
+                            <p className="title">当地跟团</p>
+                        </div>
+                        <div className="swiper-slide" onClick={this.goto.bind(null, 'xiaotuan')}>
+                            <img src="https://assets.tourscool.com/uploads/inn/2019/07/24/952/qHA_VhqUItHNyNWXR-o0Kg-ExGQ.png" alt="" />
+                            <p className="title">精品小团</p>
+                        </div>
+                        <div className="swiper-slide" onClick={this.goto.bind(null, 'youlun')}>
+                            <img src="https://assets.tourscool.com/uploads/inn/2019/07/24/952/LRQzPTBTDdKbjkmzqLn42Vycyqk.png" alt="" />
+                            <p className="title">邮轮</p>
+                        </div>
                     </div>
                 </div>
 
@@ -125,8 +148,8 @@ class Home extends Component{
                     <div className="title">
                         <div className="name">热门目的地</div>
                         <div className="link-all">
-                            查看全部 
-                            <Icon type="right" className="van-icon"/>
+                            查看全部
+                            <Icon type="right" className="van-icon" />
                         </div>
                     </div>
                     <div className="hot-place">
@@ -173,12 +196,12 @@ class Home extends Component{
                     <h1 className="title">精选商品</h1>
                     <div className="half van-list">
                         {
-                            goods.map(item=>(
+                            goods.map(item => (
                                 <div className="half-item van-cell" key={item.product_id}>
                                     <div className="van-cell__value van-cell__value--alone">
                                         <div className="hot-item">
                                             <div className="banner">
-                                                <img src={item.image} alt="banner"/>
+                                                <img src={item.image} alt="banner" />
                                             </div>
                                             <div className="desc no-wrap-line2 imitate-ellipsis2">
                                             {item.name}
@@ -217,7 +240,7 @@ class Home extends Component{
                     </div>
                 }
             </div>
-        ) 
+        )
     }
 }
 
