@@ -8,8 +8,9 @@ class detail extends Component {
     state = {
 
     }
+
     render() {
-        return <div >
+        return <div className='detail'>
             <Layout>
                 <Header style={{ background: '#fff', padding: 0, height: '46px', lineHeight: '46px', }}>
                     <Row>
@@ -63,6 +64,7 @@ class detail extends Component {
             </Layout>
         </div>
     }
+
 }
 
 export default detail;

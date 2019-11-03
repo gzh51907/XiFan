@@ -1,10 +1,15 @@
 import React, { Component } from 'react';
 import './adduser.scss';
-import { Layout, Icon, Row, Col, Collapse } from 'antd';
+import { Layout, Icon, Row, Col, Collapse, Checkbox } from 'antd';
 import 'antd/dist/antd.css';
 const { Header, Footer, Content } = Layout;
 const { Panel } = Collapse;
+
+function onChange(e) {
+    console.log(`checked = ${e.target.checked}`);
+}
 class adduser extends Component {
+
     state = {
 
     }
@@ -20,12 +25,12 @@ class adduser extends Component {
                         <Col span={6} style={{ textAlign: 'right', paddingRight: '15px', color: 'blue', fontSize: '16px' }}>登录</Col>
                     </Row>
                 </Header>
-                <Content>
+                <Content style={{ marginLeft: '20px', marginRight: '20px' }}>
                     <div className='tour'>
                         游客信息
                     </div>
-                    <Collapse accordion>
-                        <Panel header="游客" style={{ background: '#fff' }}>
+                    <Collapse accordion defaultActiveKey={['1']} >
+                        <Panel header="游客" style={{ background: '#fff' }} key="1">
                             <div className='biao1'>
                                 <p>顾客姓名</p>
                                 <form action="" >
@@ -69,8 +74,17 @@ class adduser extends Component {
                             <input type="text" placeholder="必填，用于接收电子客票" />
                         </form>
                     </div>
+                    <div className='check'>
+                        <Checkbox onChange={onChange}></Checkbox>
+                        <span className='jies'>
+                            我已阅读并接受</span>
+                        <a href="">《旅行合同等内容》</a>
+                    </div>
                 </Content>
-                <Footer>Footer</Footer>
+                <Footer style={{ background: '#fff ' }}>
+                    <div className='price'>￥1000</div>
+                    <div className='next'>下一步</div>
+                </Footer>
             </Layout>
         </div >
     }
