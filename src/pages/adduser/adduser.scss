@@ -82,17 +82,27 @@
             margin-left:10px;
         }
     }
-    .price{
-        color: red;
+    footer{
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        box-shadow: 0 -0.053333rem 0.16rem rgba(0, 0, 0, 0.16);
+        .price{
+            color: red;
+            font-size: 20px;
+            font-weight: 500;
+        }
+        .next{
+            background-color: red;
+            width: 188px;
+            height: 48px;
+            line-height: 48px;
+            float: right;
+            text-align: center;
+            color: #fff;
+        }
     }
-    .next{
-        background-color: red;
-        width: 188px;
-        height: 48px;
-        line-height: 48px;
-        float: right;
-        text-align: center;
-        color: #fff;
-    }
+   
     
 }
