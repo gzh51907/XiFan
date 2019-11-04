@@ -25,17 +25,17 @@ class detail extends Component {
     }
 
     goto = id => {
-        // this.props.history.push('/adduser');
-        this.props.history.push({
-            pathname: '/adduser',
-            state: {
-                id
-            }
-        })
+        this.props.history.push(`/adduser/${id}`);
+        // this.props.history.push({
+        //     pathname: '/adduser',
+        //     state: {
+        //         id
+        //     }
+        // })
     }
 
     goback = () => {
-        this.props.history.push('/list');
+        this.props.history.push('/mylist');
     }
 
     render() {

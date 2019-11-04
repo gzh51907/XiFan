@@ -1,0 +1,248 @@
+
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+}
+#components-layout-demo-responsive .logo {
+    height: 32px;
+    background: rgba(255, 255, 255, 0.2);
+    margin: 16px;
+  }
+
+  .searchBox{
+    width: 7.333333rem;
+    border: none;
+    outline: 0;
+    color: #666;
+    background: #DBDBDB;
+    padding: 0.133333rem 0;
+    line-height: 0.533333rem;
+    float: left;
+  } 
+
+.dbyy{box-shadow: 0px 2px 10px 0px #5E5E5E;}
+  .layout-header{
+    background: #fff;
+    height: 1.173333rem;
+    // font-size: 0.426667rem;
+    color: #eee;
+    background-color: transparent;
+    -webkit-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+    overflow: hidden;
+    z-index: 999;
+  }
+
+  .van-nav-bar--fixed {
+    top: 0;
+    left: 0;
+    width: 100%;
+    position: fixed;
+}
+.van-nav-bar__left {
+  left: 15px;
+}
+.van-nav-bar__left, .van-nav-bar__right {
+  bottom: 0;
+  font-size: 14px;
+  position: absolute;
+}
+
+.van-nav-bar__right {
+  right: 15px;
+  width: 8.453333rem;
+  height: 0.96rem;
+  top : 0.15rem
+}
+
+.search-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  display: -webkit-flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-align-items: center;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 8.24rem;
+  padding: 0 0.08rem 0 0.266667rem;
+  height: 0.906667rem;
+  background: #DBDBDB;
+  border-radius: 0.48rem;
+  overflow: hidden;
+}
+
+.search-box .box {
+  width: 7.333333rem;
+  border: none;
+  outline: 0;
+  color: #666;
+  background: #DBDBDB;
+  padding: 0.133333rem 0;
+  line-height: 0.533333rem;
+}
+
+
+.search-wrap {
+  position: relative;
+  // top: 1.173333rem;
+  z-index: 9;
+  bottom: 0;
+}
+
+
+.search-wrap .badge-bar{
+  position: fixed;
+  top: 1.173333rem;
+  bottom: 0;
+  width: 2.4rem;
+  background-color: #F1F1F1;
+}
+
+.search-wrap   .badge-bar  .van-badge {
+  font-size: 0.373333rem;
+  background-color: transparent;
+  height: 1.333333rem;
+  line-height: 0.48rem;
+  border: none;
+  text-align: center;
+  display: flex;
+  /*实现垂直居中*/
+  align-items: center;
+}
+.search-wrap .search-main {
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  padding: 1.5rem 0.133333rem 0 2.8rem;
+}
+
+
+.search-main h2 {
+  padding: 0.133333rem 0 0.266667rem 0;
+  font-size: 0.373333rem;
+  color: #9A9A9A;
+}
+
+.tag {
+  display: inline-block;
+  margin: 0 0.2rem 0.213333rem 0;
+  padding: 0.186667rem 0.266667rem;
+  font-size: 0.32rem;
+  border-radius: 0.4rem;
+}
+
+.tag.active {
+  color: #f1f1f1;
+  background: #399ef6;
+}
+
+
+.search-main .active {
+  background-color: #00ABF9;
+  color: #fff;
+}
+
+
+
+
+.hot-place {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  display: -webkit-flex;
+  text-align: center;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-justify-content: space-between;
+}
+
+
+
+.hot-place .hot-item {
+  margin-bottom: 0.266667rem;
+  width: 2.133333rem;
+}
+
+.hot-place img {
+  width: 2.133333rem;
+  height: 1.6rem;
+  border-radius: 0.08rem;
+}
+
+
+.hot-place .title {
+  font-size: 0.266667rem;
+  color: #000000;
+  height: 0.426667rem;
+  overflow: hidden;
+}
+
+.hot-place .desc {
+  font-size: 0.266667rem;
+  color: #BEBEBE;
+  height: 0.426667rem;
+  overflow: hidden;
+}
+
+
+.search-main .play-ways .title {
+  font-size: 0.32rem;
+  color: #000;
+  font-weight: 400;
+}
+.search-main .play-ways img {
+  width: 6.746667rem;
+  height: 1.6rem;
+  border-radius: 0.106667rem;
+}
+.search-main .play-ways .title span.desc {
+  font-size: 0.293333rem;
+  color: #BEBEBE;
+}
+.search-wrap  .ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected {
+  background-color: #ffffff;
+ 
+}
+
+.search-wrap  .ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected  a {
+  border-left: 0.08rem solid rgb(57, 158, 246);
+ 
+}
+#app .van-nav-bar{
+    position: fixed;
+    height: 1.173333rem;
+
+}
+.country-bg {
+  width: 6.906667rem;
+  height: 1.6rem;
+  position: relative;
+  background-color: #d8d8d8;
+  border-radius: 0.106667rem;
+  overflow: hidden;
+}
+
+.country-bg img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.country-bg .desc {
+  position: relative;
+  z-index: 4;
+  line-height: 1.6rem;
+  font-size: 0.373333rem;
+  color: #FFFFFF;
+  padding-left: 0.24rem;
+}

@@ -1,5 +1,5 @@
 import React from 'react';
-import './List.scss';
+import './myList.scss';
 import axios from 'axios'
 import { Layout, Row, Col, Card, Tabs, Tag, Icon } from 'antd';
 import 'antd/dist/antd.css';
