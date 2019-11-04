@@ -3,14 +3,25 @@ import { NavLink } from 'react-router-dom'
 import './adduser.scss';
 import { Layout, Icon, Row, Col, Collapse, Checkbox } from 'antd';
 import 'antd/dist/antd.css';
+import axios from 'axios'
 const { Header, Footer, Content } = Layout;
 const { Panel } = Collapse;
 
-function onChange(e) {
-    console.log(`checked = ${e.target.checked}`);
-}
+// function onChange(e) {
+//     console.log(`checked = ${e.target.checked}`);
+// }
 
 class adduser extends Component {
+
+    onChange = (e) => {
+        this.setState({
+            checked: e.target.checked
+        })
+    }
+
+    // onChange(e) {
+    //     console.log(`checked = ${e.target.checked}`);
+    // }
 
     onInputChange = (e) => {
         let inputValue = e.target.value,
@@ -24,31 +35,41 @@ class adduser extends Component {
         console.log(this.state)
     }
     state = {
+
+        checked: '',
         Cname: '',
         Ename: '',
         HZH: '',
         userName: '',
         tel: '',
         email: '',
+
     }
 
     goback = id => {
         this.props.history.push(`/detail/${id}`);
     }
 
-    componentDidMount() {
-        console.log(this.props);
-
+    async componentDidMount() {
+        let gid = Number(this.props.match.params.id)
+        let { data: { data } } = await axios.post("http://10.3.133.163:8827/mygoods/list", {
+            gid
+        });
+        this.setState({
+            adduserData: data[0].sell_price,
+            gid: data[0].gid
+        });
     }
 
     render() {
-        if (this.props.location.state) {
+        let { adduserData, checked } = this.state;
+        if (this.props.match.params && adduserData) {
             return <div className='adduser'>
                 <Layout>
                     <Header style={{ background: '#fff', padding: 0, height: '58px', lineHeight: '58px' }}>
                         <Row>
                             <Col span={6}>
-                                <Icon type="left" style={{ fontSize: '16px', marginLeft: '15px' }} onClick={this.goback.bind(null, this.props.location.state.id)} />
+                                <Icon type="left" style={{ fontSize: '16px', marginLeft: '15px' }} onClick={this.goback.bind(null, this.props.match.params.id)} />
                             </Col>
                             <Col span={12} style={{ textAlign: 'center', fontSize: '18px' }}>确认订单</Col>
                             <Col span={6} style={{ textAlign: 'right', paddingRight: '15px', color: 'blue', fontSize: '16px' }}></Col>
@@ -100,15 +121,18 @@ class adduser extends Component {
                             </form>
                         </div>
                         <div className='check'>
-                            <Checkbox onChange={onChange}></Checkbox>
+                            <Checkbox onChange={this.onChange}></Checkbox>
                             <span className='jies'>
                                 我已阅读并接受</span>
                             <a href="">《旅行合同等内容》</a>
                         </div>
                     </Content>
                     <Footer style={{ background: '#fff ', padding: '12px' }}>
-                        <div className='price' style={{ float: "left", lineHeight: '48px' }}>￥1000</div>
-                        <div className='next' onClick={e => this.getInputValue(e)}> 下一步</div>
+                        <div className='price' style={{ float: "left", lineHeight: '48px' }}>￥{adduserData}</div>
+                        {
+                            checked &&
+                            <div className='next' onClick={e => this.getInputValue(e)}> 下一步</div>
+                        }
                     </Footer>
                 </Layout>
             </div >
