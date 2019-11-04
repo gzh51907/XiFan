@@ -31,8 +31,16 @@ class adduser extends Component {
         })
         // console.log(this.state)
     }
-    getInputValue = () => {
-        console.log(this.state)
+    getInputValue = async () => {
+        // let username = 'xiaobai'
+        this.state.username = 'xiaobai';
+        if (this.state.Cname && this.state.Ename && this.state.HZH && this.state.tel && this.state.email && this.state.user) {
+            await axios.post("http://10.3.133.163:8827/myorder/add", this.state);
+            alert('提交订单成功！enjoy your time！');
+            this.props.history.push(`/detail/${this.props.match.params.id}`);
+        } else {
+            alert('请输入完整信息！！！')
+        }
     }
     state = {
 
@@ -40,7 +48,7 @@ class adduser extends Component {
         Cname: '',
         Ename: '',
         HZH: '',
-        userName: '',
+        user: '',
         tel: '',
         email: '',
 
@@ -59,6 +67,10 @@ class adduser extends Component {
             adduserData: data[0].sell_price,
             gid: data[0].gid
         });
+        let { data: { data: data2 } } = await axios.get("http://10.3.133.163:8827/myorder", {
+            params: {}
+        });
+        console.log(data2);
     }
 
     render() {
@@ -110,7 +122,7 @@ class adduser extends Component {
                             <p>联系人信息</p>
                             <form action="" >
                                 <label htmlFor="">联系人:</label>
-                                <input type="text" placeholder="请输入联系人姓名" name='userName' onChange={(e) => this.onInputChange(e)} />
+                                <input type="text" placeholder="请输入联系人姓名" name='user' onChange={(e) => this.onInputChange(e)} />
                             </form><form action="" >
                                 <label htmlFor="">手机号码:</label>
                                 <input type="text" placeholder="必填，用于接收信息" name='tel' onChange={(e) => this.onInputChange(e)} />
@@ -131,7 +143,7 @@ class adduser extends Component {
                         <div className='price' style={{ float: "left", lineHeight: '48px' }}>￥{adduserData}</div>
                         {
                             checked &&
-                            <div className='next' onClick={e => this.getInputValue(e)}> 下一步</div>
+                            <div className='next' onClick={e => this.getInputValue(e)}>提交订单</div>
                         }
                     </Footer>
                 </Layout>

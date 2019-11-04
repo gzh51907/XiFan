@@ -21,6 +21,7 @@ Router.use((req, res, next) => {
 
 // 引入每个模块路由
 const goodsRouter = require('./mygoods');
+const orderRouter = require('./myorder');
 // const userRouter = require('./user');
 // const cartsRouter = require('./carts');
 
@@ -30,6 +31,7 @@ Router.use(express.urlencoded({
 }), express.json());
 
 Router.use('/mygoods', goodsRouter);
+Router.use('/myorder', orderRouter);
 // Router.use('/user', userRouter);
 // Router.use('/carts', cartsRouter);
 
