@@ -17,7 +17,7 @@ class Orderinf extends Component {
     });
 
     this.setState({
-      infoData: data
+      infoData: data.reverse()
     })
   }
   render() {
@@ -37,7 +37,7 @@ class Orderinf extends Component {
           {
             infoData.map(item => {
               return (
-                <Row className="showinfo">
+                <Row className="showinfo" key={item._id}>
                   <Col span={2} style={{ textAlign: "center" }}>{item.username}</Col>
                   <Col span={7} style={{ textAlign: "center" }}>{item.goods_name}</Col>
                   <Col span={3} style={{ textAlign: "center" }}>

@@ -28,7 +28,8 @@ class sApp extends React.Component {
   // 退出登录
   loginOut = () => {
     // localStorage.setItem('username','');
-    this.props.history.push('/login')
+    // this.props.history.push('/login')
+    console.log('signout');
   }
   render() {
     let username = localStorage.getItem('username');
@@ -37,11 +38,11 @@ class sApp extends React.Component {
     return (
       <div>
         <Layout>
-          <Header className="header" style={{ background: '#fff' }}>
+          <Header className="header" style={{ background: '#fff', paddingLeft: '10px' }}>
             <div className="logo" />
             <Menu theme="light" mode="horizontal" defaultSelectedKeys={['2']} style={{ lineHeight: '64px', }}>
-              <Menu.Item key="1">稀饭旅行后台管理系统</Menu.Item>
-              <Menu.Item key="2">{username}，欢迎您</Menu.Item>
+              <Menu.Item key="1" style={{ color: "#58bc58", fontSize: "28px", fontWigth: "bold" }}>稀饭旅行后台管理系统</Menu.Item>
+              <Menu.Item key="2">{username}欢迎您</Menu.Item>
               <Menu.Item key="3" onClick={this.loginOut}>退出登录</Menu.Item>
               {/* <Menu.Item key="2">nav 2</Menu.Item>
             <Menu.Item key="3">nav 3</Menu.Item> */}
@@ -52,7 +53,7 @@ class sApp extends React.Component {
               <Menu mode="inline" defaultSelectedKeys={['1']} defaultOpenKeys={['sub1']} style={{ height: '100%', borderRight: 0 }}>
                 <SubMenu key="sub1" title={
                   <span>
-                    <Icon type="user" />
+                    <Icon type="github" />
                     用户管理
               </span>
                 }
@@ -64,25 +65,24 @@ class sApp extends React.Component {
                 </SubMenu>
                 <SubMenu key="sub2" title={
                   <span>
-                    <Icon type="table" />
-                    景区管理
+                    <Icon type="codepen" />
+                    商品管理
               </span>
                 }
                 >
                   <Menu.Item key="5" onClick={() => {
                     history.push('/allshop')
-                  }}>查询所有景区</Menu.Item>
+                  }}>查询所有商品</Menu.Item>
                   <Menu.Item key="6" onClick={() => {
                     history.push('/addgoods')
                   }}>添加商品</Menu.Item>
-                  <Menu.Item key="7">修改景区相关信息</Menu.Item>
-                  <Menu.Item key="8"></Menu.Item>
+                  <Menu.Item key="7">修改商品信息</Menu.Item>
                 </SubMenu>
                 <SubMenu
                   key="sub3"
                   title={
                     <span>
-                      <Icon type="shopping-cart" />
+                      <Icon type="file-text" />
                       订单管理
               </span>
                   }
@@ -117,7 +117,7 @@ class sApp extends React.Component {
           </Layout>
 
 
-          <Route path='/login' component={Login} />
+          {/* <Route path='/login' component={Login} /> */}
           {/* <Route path='/orderinfo' component={Orderinfo} /> */}
 
         </Layout>

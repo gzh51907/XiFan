@@ -1,68 +1,77 @@
-import React from 'react'
-import Api from '../Api'
-import axios from 'axios'
-import 'antd/dist/antd.css';
-import { Row, Col } from 'antd';
-import { verify } from 'crypto';
+import React, { Component } from 'react';
+import { Row, Col, Icon } from 'antd';
+import axios from 'axios';
+import './allshop.scss'
 
-
-class Allshop extends React.Component {
+class Orderinf extends Component {
     state = {
-        data: []
+        goodsData: []
     }
-    async  componentDidMount() {
-        let { data } = await axios('http://127.0.0.1:3233/home/goods',{
-            params:{
-                num:0
-            }
-        })
-        // console.log(data)
-        
+    del = () => {
+        console.log(66)
+    }
+    async componentDidMount() {
+
+
+        let { data: { data } } = await axios.post("http://10.3.133.163:8827/mygoods/list", {
+            type: 'tuijian'
+        });
+
         this.setState({
-            data: data
+            goodsData: data.reverse()
         })
-        
     }
-     onChange=(pageNumber)=> {
-    console.log('Page: ', pageNumber);
-}
     render() {
-        let { data } = this.state
-
-
-        let goods = []
-        data.forEach(item => {
-            goods.push(item[0])
-        })
-        console.log(goods)
-        return (
-            <div>
-                <Row>
-                    <Col span={6} style={{ textAlign: "center" }}>id</Col>
-                    <Col span={6} style={{ textAlign: "center" }}>商品图片</Col>
-                    <Col span={6} style={{ textAlign: "center" }}>描述</Col>
-                    <Col span={6} style={{ textAlign: "center" }}>价格</Col>
-                </Row>
-                <div>
-                 {goods.map(item=>{
-                     return <Row style={{ height: 80, borderBottom: '1px solid black' }} key={item.product_id}>
-                      <Col span={6} style={{ height:'100%'}}>{item.product_id}</Col>
-                         <Col span={6} style={{ height: '100%' }}><span style={{ height: '100%',width:'50%',display:'block' }}>
-                             <img src={item.image} style={{ height: '80%', width: '100%', display: 'block',margin:'10px 0px 0px 50%',  }}/>
-                         </span> </Col>
-                         <Col span={6} style={{ height: '100%' }} style={{overflow: 'hidden',maxHeight: '79px',textOverflow: 'ellipsis',display: '-webkit-box',WebkitLineClamp:3,WebkitBoxOrient: 'vertical'}}>{item.name}</Col>
-                         <Col span={6} style={{ height: '100%',textAlign:"center" }}>{item.default_price}</Col>
-                         
-                     </Row>
-                    
-                 })}
+        let { goodsData } = this.state;
+        console.log(goodsData);
+        if (goodsData.length) {
+            return (
+                <div className="orderinf">
+                    <Row>
+                        <Col span={2} style={{ textAlign: "center" }}>ID</Col>
+                        <Col span={7} style={{ textAlign: "center" }}>标题</Col>
+                        <Col span={2} style={{ textAlign: "center" }}>图片</Col>
+                        <Col span={2} style={{ textAlign: "center" }}>现价</Col>
+                        <Col span={2} style={{ textAlign: "center" }}>原价</Col>
+                        <Col span={2} style={{ textAlign: "center" }}>已售出</Col>
+                        <Col span={2} style={{ textAlign: "center" }}>标签</Col>
+                        <Col span={2} style={{ textAlign: "center" }}>城市</Col>
+                        <Col span={2} style={{ textAlign: "center" }}>评分</Col>
+                    </Row>
+                    {
+                        goodsData.map(item => {
+                            return (
+                                <Row className="showinfo" key={item._id}>
+                                    <Col span={2} style={{ textAlign: "center" }}>{item.gid}</Col>
+                                    <Col span={7} style={{ textAlign: "center" }}>{item.name}</Col>
+                                    <Col span={2} style={{ textAlign: "center" }}>
+                                        <img src={item.imgurl}
+                                            alt=""
+                                            style={{ width: "100%", height: "90px" }}
+                                        />
+                                    </Col>
+                                    <Col span={2} style={{ textAlign: "center", color: 'red', fontWeight: 'bold' }}>￥{item.sell_price}</Col>
+                                    <Col span={2} style={{ textAlign: "center", color: 'red', fontWeight: 'bold' }}>￥{item.market_price}</Col>
+                                    <Col span={2} style={{ textAlign: "center" }}>{item.sales}</Col>
+                                    <Col span={2} style={{ textAlign: "center" }}>{item.icons_show}</Col>
+                                    <Col span={2} style={{ textAlign: "center" }}>{item.city}</Col>
+                                    <Col span={2} style={{ textAlign: "center" }}>{item.score}</Col>
+                                    <Col span={1} style={{ textAlign: "center" }}>
+                                        <Icon type="delete"
+                                            style={{ color: 'red', cursor: 'pointer', fontSize: 24 }}
+                                            onClick={this.del}
+                                        />
+                                    </Col>
+                                </Row>
+                            )
+                        })
+                    }
                 </div>
-                   
-                   
-               
-            </div>
-        )
+            )
+        } else {
+            return <div>正确请求数据，请稍等。。。</div>
+        }
     }
 }
 
-export default Allshop
+export default Orderinf;
