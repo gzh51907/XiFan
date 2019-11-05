@@ -5,7 +5,8 @@ import MyList from './pages/myList'
 import Adduser from './pages/adduser/adduser'
 import Detail from './pages/detail/detail'
 import Search from './search'
-
+import Login from './pages/login/login'
+import Reg from './pages/login/reg.jsx'
 class App extends Component {
     render() {
         return (
@@ -13,6 +14,8 @@ class App extends Component {
                 <Switch>
                     <Route path="/home" component={Home} />
                     <Route path="/search" component={Search} />
+                    <Route path="/login" component={Login} />
+                    <Route path="/Reg" component={Reg} />
                     <Route path="/mylist" component={MyList} />
                     <Route path="/detail/:id" component={Detail} />
                     <Route path="/adduser/:id" component={Adduser} />

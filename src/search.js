@@ -91,7 +91,7 @@ class Searchs extends Component {
                                     }}>
                                         {/* to={{ pathname: '/search/' + index, state: json.data[index] }} */}
                                        
-                                        <li  onClick={this.goto.bind(null, item.category + '/' + item.start_city)} style={{ paddingLeft: '0.426667rem' }}> <div>{item.cityName}</div>    </li>
+                                        <Link   to={{ pathname: '/search/' + index, state: json.data[index] }} style={{ paddingLeft: '0.426667rem' }}> <div>{item.cityName}</div>    </Link>
                                     </Menu.Item>
                                 )
                             }
@@ -101,10 +101,10 @@ class Searchs extends Component {
                     <div className='search-main'>
 
                         <Switch>
-
-                            <Route path="/search" component={List} exact />
                             <Route path="/search/0" component={List} exact />
-                            <Route  component={Lists} exact />
+                            <Route path="/search" component={List} exact />
+                          
+                            <Route path="/search/"  component={Lists}  />
 
                         </Switch>
 
