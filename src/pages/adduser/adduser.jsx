@@ -65,12 +65,10 @@ class adduser extends Component {
         });
         this.setState({
             adduserData: data[0].sell_price,
-            gid: data[0].gid
+            gid: data[0].gid,
+            imgurl: data[0].imgurl,
+            goods_name: data[0].name
         });
-        let { data: { data: data2 } } = await axios.get("http://10.3.133.163:8827/myorder", {
-            params: {}
-        });
-        console.log(data2);
     }
 
     render() {

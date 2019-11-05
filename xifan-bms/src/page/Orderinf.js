@@ -1,67 +1,70 @@
-import React,{Component} from 'react';
-import { Table } from 'antd';
+import React, { Component } from 'react';
+import { Row, Col, Icon } from 'antd';
 import axios from 'axios';
-const columns = [
-    {
-      title: '_ID',
-      dataIndex: '_id',
-      render: text => <a>{text}</a>,
-    },
-    {
-      title: 'Username',
-      dataIndex: 'username',
-    },
-    {
-      title: 'RouteId',
-      dataIndex: 'routeId',
-    },
-    
-  ];
-  
-  // rowSelection object indicates the need for row selection
-  const rowSelection = {
-    onChange: (selectedRowKeys, selectedRows) => {
-      console.log(`selectedRowKeys: ${selectedRowKeys}`, 'selectedRows: ', selectedRows);
-    },
-    getCheckboxProps: record => ({
-      disabled: record._id === 'Disabled User', // Column configuration not to be checked
-      _id: record._id,
-    }),
-  };
-class Orderinf extends Component{
-    state = {
-        datalist:[]
-    }
-    delete = () => {
-      console.log(66)
-    }
-    async componentDidMount() {
-        let {datalist} = this.state;
-        let {data} = await axios.get('http://localhost:5200/shoping/All');
-        // console.log(data)
-        // datalist.push(data[0]);
-        // console.log(datalist)
-        datalist = data;
-        this.setState({
-            datalist
-        })
+import './Orderinf.scss'
 
+class Orderinf extends Component {
+  state = {
+    infoData: []
+  }
+  del = () => {
+    console.log(66)
+  }
+  async componentDidMount() {
+
+    let { data: { data } } = await axios.get("http://10.3.133.163:8827/myorder", {
+      params: {}
+    });
+
+    this.setState({
+      infoData: data
+    })
+  }
+  render() {
+    let { infoData } = this.state;
+    // console.log(infoData);
+    if (infoData.length) {
+      return (
+        <div className="orderinf">
+          <Row>
+            <Col span={2} style={{ textAlign: "center" }}>用户</Col>
+            <Col span={7} style={{ textAlign: "center" }}>商品</Col>
+            <Col span={3} style={{ textAlign: "center" }}>图片</Col>
+            <Col span={3} style={{ textAlign: "center" }}>价格</Col>
+            <Col span={3} style={{ textAlign: "center" }}>联系人</Col>
+            <Col span={4} style={{ textAlign: "center" }}>电话</Col>
+          </Row>
+          {
+            infoData.map(item => {
+              return (
+                <Row className="showinfo">
+                  <Col span={2} style={{ textAlign: "center" }}>{item.username}</Col>
+                  <Col span={7} style={{ textAlign: "center" }}>{item.goods_name}</Col>
+                  <Col span={3} style={{ textAlign: "center" }}>
+                    <img src={item.imgurl}
+                      alt=""
+                      style={{ width: "100%", height: "90px" }}
+                    />
+                  </Col>
+                  <Col span={3} style={{ textAlign: "center", color: 'red', fontWeight: 'bold' }}>￥{item.adduserData}</Col>
+                  <Col span={3} style={{ textAlign: "center" }}>{item.user}</Col>
+                  <Col span={4} style={{ textAlign: "center" }}>{item.tel}</Col>
+                  <Col span={2} style={{ textAlign: "center" }}>
+                    <Icon type="delete"
+                      style={{ color: 'red', cursor: 'pointer', fontSize: 24 }}
+                      onClick={this.del}
+                    />
+                  </Col>
+                </Row>
+              )
+            })
+          }
+        </div>
+      )
+    } else {
+      return <div>正确请求数据，请稍等。。。</div>
     }
-    render() {
-      // console.log(data)
-        let {datalist} = this.state;
-        return(
-            <div>
-              {
-                datalist.length?<>
-                  <Table rowSelection={rowSelection} columns={columns} dataSource={datalist} />
-                  {/* <button onClick={this.delete}>删除</button> */}
-                </>:<></>
-              }
-                
-            </div>
-        )
-    }
+  }
 }
 
 export default Orderinf;
