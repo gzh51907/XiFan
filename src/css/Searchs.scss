@@ -28,7 +28,7 @@
     height: 1.173333rem;
     // font-size: 0.426667rem;
     color: #eee;
-    background-color: transparent;
+    // background-color: transparent;
     -webkit-transition: all 0.5s;
     -o-transition: all 0.5s;
     transition: all 0.5s;
@@ -44,10 +44,11 @@
 }
 .van-nav-bar__left {
   left: 15px;
+  height: 100%;
 }
 .van-nav-bar__left, .van-nav-bar__right {
   bottom: 0;
-  font-size: 14px;
+  font-size: 0.37rem;
   position: absolute;
 }
 
@@ -245,4 +246,15 @@
   font-size: 0.373333rem;
   color: #FFFFFF;
   padding-left: 0.24rem;
+}
+
+.searchIcon{
+  position: relative;
+  top:0.3rem;
+
+  // 1.17rem   0.585
+  // 0.37‬rem   0.185
+}
+.searchIcon {
+
 }

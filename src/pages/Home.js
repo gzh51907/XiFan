@@ -20,7 +20,7 @@ class Home extends Component {
     }
     async componentWillMount() {
         let { data } = await Axios({
-            baseURL: 'http://127.0.0.1:3233/home/home'
+            baseURL: 'http://193.112.4.47:3233/home/home'
         })
         this.setState({
             banner: data[0].indexData[0].data,

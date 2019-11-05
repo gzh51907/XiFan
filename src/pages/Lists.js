@@ -1,5 +1,17 @@
 import React, { Component } from 'react';
+
+
 class List extends Component {
+        
+    goto = e => {
+        console.log(e)
+        this.props.history.push({
+            pathname: '/mylist',
+            state: {
+                e
+            }
+        });
+    }
     render() {
 
         let json = this.props.location.state;
@@ -7,10 +19,10 @@ class List extends Component {
         return (
 
             <div>
-                <div className='country-bg'>
+                <div className='country-bg'  onClick={this.goto.bind(null, json.dataArray[0].datas[0].category)}>
                     <img src={json.dataArray[0].datas[0].image}></img>
                     <div className='desc'> {json.dataArray[0].datas[0].countryName + '全部线路' + json.dataArray[0].datas[0].content + '条'}</div>
-
+                    
                 </div>
 
                 {/* 热门目的地 */}
@@ -25,7 +37,7 @@ class List extends Component {
                             // console.log(json.dataArray[1].datas),
                             json.dataArray[1].datas.map(item =>
 
-                                <div className='hot-item' key={item.dest_home}>
+                                <div className='hot-item' key={item.start_city}  onClick={this.goto.bind(null, item.start_city)}>
                                     <img src={item.image}></img>
                                     <div className='title'>{item.content}</div>
                                 </div>
@@ -52,7 +64,7 @@ class List extends Component {
 
                             json.dataArray[1].datas
                                 .map(item =>
-                                    <div className='tag active' key={item.category + '/' + item.start_city}> {item.content} </div>
+                                    <div className='tag active' key={item.id}   onClick={this.goto.bind(null, item.id)}> {item.content} </div>
                                 )
                         }
                     </div>

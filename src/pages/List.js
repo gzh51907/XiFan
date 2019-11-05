@@ -1,10 +1,42 @@
 import React, { Component } from 'react';
+import { browserHistory } from 'react-router'
 import json from './s.json';
+import Axios from '../../node_modules/axios';
 class List extends Component {
-    render() {
-        return (
+    constructor() {
+        super();
+        this.state = {
+             data :[]
+        }
+    }
+    async componentWillMount() {
+        let { data } = await Axios({
+            baseURL: 'http://193.112.4.47:3233/search'
+        })
+        this.setState({
+            data : data
+        })
+        // console.log(this.state.goods)
+    }
 
+    
+    goto = e => {
+        console.log(e)
+        this.props.history.push({
+            pathname: '/mylist',
+            state: {
+                e
+            }
+        });
+    }
+
+
+
+    render() {
+        let {data} = this.state
+        return (
             <div>
+            {console.log(data)}
                 {/* 路线模块         */}
                 <div className='result-line'>
 
@@ -23,7 +55,10 @@ class List extends Component {
 
                             json.data[0].dataArray[0].datas
                                 .map(item =>
-                                    <div className='tag active' key={item.category + '/' + item.start_city}> {item.content} </div>
+                                    <div className='tag active' key={item.category + '/' + item.start_city}
+                                        onClick={this.goto.bind(null, item.category + '/' + item.start_city)}
+                                       
+                                    >  {item.content} </div>
                                 )
                         }
                     </div>
@@ -44,7 +79,7 @@ class List extends Component {
                         {
                             json.data[0].dataArray[1].datas.map(
                                 item =>
-                                    <div className='hot-item' key={item.cityName}>
+                                    <div className='hot-item' key={item.cityName}  onClick={this.goto.bind(null, item.category + '/' + item.start_city)}>
                                         <img src={item.image}></img>
                                         <div className='title'>{item.content}</div>
                                         <div className='desc'>{item.subTitle}</div>
@@ -68,7 +103,7 @@ class List extends Component {
                         {
                             json.data[0].dataArray[2].datas.map(
                                 item =>
-                                    <div className='hot-item' key={item.category}>
+                                    <div className='hot-item' key={item.category}  onClick={this.goto.bind(null, item.category + '/' + item.start_city)}>
                                         <img src={item.image}></img>
                                         <div className='title'>{item.content}</div>
 
@@ -92,7 +127,7 @@ class List extends Component {
                     {
                         json.data[0].dataArray[3].datas.map(
                             item =>
-                                <div className='play-ways' key={item.product_type}>
+                                <div className='play-ways' key={item.product_type}  onClick={this.goto.bind(null, item.product_type)}>
                                     <img src={item.image} alt="" />
                                     <div className='title'>
                                         <span>{item.content}</span>

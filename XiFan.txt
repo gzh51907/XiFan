@@ -1,0 +1,139 @@
+文件夹 PATH 列表
+卷序列号为 000000DA 2CF7:C1B5
+C:.
+│  .gitignore
+│  package-lock.json
+│  package.json
+│  README.md
+│  XiFan.txt
+│  yarn.lock
+│  
+├─node-serve
+│  │  .gitignore
+│  │  package-lock.json
+│  │  package.json
+│  │  
+│  └─src
+│      │  config.json
+│      │  index.html
+│      │  server.js
+│      │  
+│      ├─db
+│      │      index.js
+│      │      mongo.js
+│      │      
+│      ├─routers
+│      │      index.js
+│      │      mygoods.js
+│      │      myorder.js
+│      │      
+│      └─utils
+│              index.js
+│              token.js
+│              
+├─public
+│  │  favicon.ico
+│  │  index.html
+│  │  
+│  └─home
+│          entry-block (1).png
+│          entry-block (2).png
+│          entry-block (3).png
+│          entry-block (4).png
+│          
+├─src
+│  │  App.jsx
+│  │  index.js
+│  │  json.json
+│  │  rem.js
+│  │  search.js
+│  │  serviceWorker.js
+│  │  
+│  ├─Api
+│  │      index.js
+│  │      
+│  ├─assets
+│  │  └─img
+│  │          1.jpg
+│  │          
+│  ├─css
+│  │      home.css
+│  │      login.scss
+│  │      personal.scss
+│  │      Searchs.scss
+│  │      
+│  ├─imgs
+│  │      0e37d63.png
+│  │      4ec097e.png
+│  │      862e402.png
+│  │      8c3038d.png
+│  │      9a61422.png
+│  │      logo.png
+│  │      
+│  └─pages
+│      │  Home.js
+│      │  List.js
+│      │  Lists.js
+│      │  s.json
+│      │  
+│      ├─adduser
+│      │      adduser.jsx
+│      │      adduser.scss
+│      │      
+│      ├─detail
+│      │      detail.jsx
+│      │      detail.scss
+│      │      mes.png
+│      │      phone.png
+│      │      shouj.png
+│      │      star.png
+│      │      
+│      └─myList
+│              index.jsx
+│              myList.scss
+│              
+└─xifan-bms
+    │  .gitignore
+    │  package-lock.json
+    │  package.json
+    │  README.md
+    │  
+    ├─public
+    │      favicon.ico
+    │      index.html
+    │      logo192.png
+    │      logo512.png
+    │      manifest.json
+    │      robots.txt
+    │      
+    └─src
+        │  1.jpg
+        │  2.jpg
+        │  App.css
+        │  App.js
+        │  App.test.js
+        │  index.css
+        │  index.js
+        │  logo.svg
+        │  serviceWorker.js
+        │  
+        ├─Api
+        │      index.js
+        │      
+        └─page
+            │  addgoods.js
+            │  allshop.js
+            │  app.css
+            │  app.js
+            │  cancel.js
+            │  Orderinf.js
+            │  searchuser.js
+            │  updata.css
+            │  updateuser.js
+            │  
+            └─login
+                    login.css
+                    Login.js
+                    login.min.css
+                    login.scss
+                    
